@@ -3,12 +3,13 @@
 //
 
 import XCTest
-@testable import Layer1Domain
+import ApplicationLayer
+@testable import DetailLayer
 
 class DomainLayerTests: XCTestCase {
     
     func testExample() throws {
-        debugPrint("DOMAIN LAYER TESTS")
+        debugPrint("DETAIL LAYER TESTS")
     }
     
 }
