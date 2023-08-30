@@ -3,8 +3,8 @@
 //
 
 import XCTest
-import Layer2Application
-@testable import Layer3InterfaceAdapter
+import ApplicationLayer
+@testable import InterfaceAdapterLayer
 
 class InterfaceAdapterLayerTests: XCTestCase {
     

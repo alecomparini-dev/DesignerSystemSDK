@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "designersystemsdk",
+    name: "DesignerSystemSDK",
     platforms: [
         .iOS(.v14),
         .driverKit(.v19),
@@ -12,7 +12,7 @@ let package = Package(
     ],
     
     products: [
-        .library( name: "designersystemsdk",
+        .library( name: "DesignerSystemSDK",
                   targets: ["DomainLayer",
                             "ApplicationLayer",
                             "InterfaceAdapterLayer",
@@ -20,8 +20,7 @@ let package = Package(
     ],
   
     dependencies: [
-        .package(url: "https://github.com/alecomparini-dev/custom-component-sdk.git", branch: "develop"),
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: Version(stringLiteral: "5.7.1")))
+        .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "master")
     ],
 
     targets: [

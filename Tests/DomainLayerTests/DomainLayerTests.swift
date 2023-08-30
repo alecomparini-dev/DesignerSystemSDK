@@ -3,7 +3,7 @@
 //
 
 import XCTest
-@testable import Layer1Domain
+@testable import DomainLayer
 
 class DomainLayerTests: XCTestCase {
     

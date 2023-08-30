@@ -3,8 +3,8 @@
 //
 
 import XCTest
-import Layer1Domain
-@testable import Layer2Application
+import DomainLayer
+@testable import ApplicationLayer
 
 class GetDesignerSystemUseCaseTests: XCTestCase {
     
