@@ -1,0 +1,45 @@
+{
+  "configurations" : [
+    {
+      "id" : "5CAEA60F-76FF-452A-959B-ECF3B926FCF4",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "ApplicationLayerTests",
+        "name" : "ApplicationLayerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "DomainLayerTests",
+        "name" : "DomainLayerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "InterfaceAdapterLayerTests",
+        "name" : "InterfaceAdapterLayerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/..\/Network",
+        "identifier" : "NetworkTests",
+        "name" : "NetworkTests"
+      }
+    }
+  ],
+  "version" : 1
+}
