@@ -12,11 +12,13 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DesignSystemDomain",  targets: ["DesignSystemDomain"]),
-        .library(name: "DesignSystemUseCase", targets: ["DesignSystemUseCase"]),
-        .library(name: "DesignerSystemPresenters", targets: ["DesignerSystemPresenters"]),
-        .library(name: "DesignerSystemUseCaseGateway", targets: ["DesignerSystemUseCaseGateway"]),
-        .library(name: "DesignerSystemUI", targets: ["DesignerSystemUI"]),
+        .library(name: "DesignSystemInterface",  targets: ["DesignSystemInterface"]),
+
+//        .library(name: "DesignSystemDomain",  targets: ["DesignSystemDomain"]),
+//        .library(name: "DesignSystemUseCase", targets: ["DesignSystemUseCase"]),
+//        .library(name: "DesignerSystemPresenters", targets: ["DesignerSystemPresenters"]),
+//        .library(name: "DesignerSystemUseCaseGateway", targets: ["DesignerSystemUseCaseGateway"]),
+//        .library(name: "DesignerSystemUI", targets: ["DesignerSystemUI"]),
     ],
   
     dependencies: [
@@ -31,7 +33,7 @@ let package = Package(
         .target(
             name: "DesignSystemDomain",
             dependencies: [],
-            path: "Sources/Layer1_Domain"
+            path: "Sources/Domain"
         ),
     
     
@@ -44,6 +46,13 @@ let package = Package(
         
         
         //MARK: - INTERFACE ADAPTER LAYER
+        
+        .target(
+            name: "DesignSystemInterface",
+            dependencies: ["DesignSystemUseCase"],
+            path: "Sources/Layer3_InterfaceAdapter/Interface"
+        ),
+        
         .target(
             name: "DesignerSystemPresenters",
             dependencies: ["DesignSystemUseCase"],
