@@ -20,7 +20,7 @@ let package = Package(
     ],
   
     dependencies: [
-        .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "master")
+        .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "develop")
     ],
 
     targets: [
