@@ -13,12 +13,12 @@ let package = Package(
     
     products: [
         .library(name: "DesignSystemInterface",  targets: ["DesignSystemInterface"]),
-        
-        .library(name: "DesignSystemDomain",  targets: ["DesignSystemDomain"]),
-        .library(name: "DesignSystemUseCase", targets: ["DesignSystemUseCase"]),
-        .library(name: "DesignerSystemPresenters", targets: ["DesignerSystemPresenters"]),
-        .library(name: "DesignerSystemUseCaseGateway", targets: ["DesignerSystemUseCaseGateway"]),
-        .library(name: "DesignerSystemUI", targets: ["DesignerSystemUI"]),
+
+//        .library(name: "DesignSystemDomain",  targets: ["DesignSystemDomain"]),
+//        .library(name: "DesignSystemUseCase", targets: ["DesignSystemUseCase"]),
+//        .library(name: "DesignerSystemPresenters", targets: ["DesignerSystemPresenters"]),
+//        .library(name: "DesignerSystemUseCaseGateway", targets: ["DesignerSystemUseCaseGateway"]),
+//        .library(name: "DesignerSystemUI", targets: ["DesignerSystemUI"]),
     ],
   
     dependencies: [
