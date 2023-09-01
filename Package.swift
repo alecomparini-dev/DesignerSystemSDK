@@ -47,8 +47,6 @@ let package = Package(
             path: "Sources/3InterfaceAdapter/DesignerSystem"
         ),
 
-        
-        
         .target(
             name: "Presenters",
             dependencies: ["UseCase"],
@@ -72,14 +70,14 @@ let package = Package(
             path: "Sources/4Detail/UI"
         ),
         
-            .target(
-                name: "NetworkSDK",
-                dependencies: [
-                    "UseCaseGateway",
-                    .product(name: "Network" , package: "NetworkSDK")
-                ],
-                path: "Sources/4Detail/NetworkSDK"
-            ),
+        .target(
+            name: "NetworkSDK",
+            dependencies: [
+                "UseCaseGateway",
+                .product(name: "NetworkSDK" , package: "NetworkSDK")
+            ],
+            path: "Sources/4Detail/NetworkSDK"
+        ),
 
         
         //  MARK: - TESTS TARGETS AREA
