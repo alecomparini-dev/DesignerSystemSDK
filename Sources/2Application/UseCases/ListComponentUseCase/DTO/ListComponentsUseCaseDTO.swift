@@ -1,15 +1,11 @@
-//
-//  File.swift
-//  
-//
 //  Created by Alessandro Comparini on 31/08/23.
 //
 
 import Foundation
 import Domain
 
-enum ListComponentUseCaseDTO {
-
+enum ListComponentsUseCaseDTO {
+    
     struct Input {
         let themeId: Int
     }
