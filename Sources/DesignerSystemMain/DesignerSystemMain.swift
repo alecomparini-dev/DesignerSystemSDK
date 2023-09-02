@@ -3,7 +3,7 @@
 //
 
 import Foundation
-import DesignerSystem
+import DesignerSystemAdapter
 
 class DesignerSystemMain {
     

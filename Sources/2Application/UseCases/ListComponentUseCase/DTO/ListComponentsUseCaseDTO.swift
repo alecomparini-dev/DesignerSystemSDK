@@ -2,7 +2,7 @@
 //
 
 import Foundation
-import Domain
+import DSMDomain
 
 enum ListComponentsUseCaseDTO {
     

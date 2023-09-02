@@ -3,7 +3,7 @@
 //
 
 import Foundation
-import CustomComponents
+import CustomComponentsSDK
 
 class CustomButtonPrimaryImpl: DesignerSystemComponent  {
     typealias T = ButtonBuilder

@@ -12,7 +12,7 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DesignerSystemSDK",  targets: ["DesignerSystemMain"]),
+        .library(name: "DesignerSystemSDK",  targets: ["DesignerSystemSDK"]),
     ],
   
     dependencies: [
@@ -24,71 +24,78 @@ let package = Package(
     targets: [
 
         
-        //MARK: - DOMAIN LAYER
+//MARK: - DOMAIN
         .target(
-            name: "Domain",
+            name: "DSMDomain",
             dependencies: [],
             path: "Sources/1Domain/Domain"
         ),
     
     
         
-        //MARK: - APPLICATION BUSINESS RULE LAYER
+//MARK: - APPLICATION
         .target(
-            name: "UseCase",
-            dependencies: ["Domain"],
+            name: "DSMUseCase",
+            dependencies: ["DSMDomain"],
             path: "Sources/2Application/UseCases"
         ),
         
+
         
-        
-        //MARK: - INTERFACE ADAPTER LAYER
+//MARK: - INTERFACE ADAPTER
         .target(
-            name: "DesignerSystem",
-            dependencies: ["Presenters", "CustomComponentsSDK"],
-            path: "Sources/3InterfaceAdapter/DesignerSystem"
+            name: "DesignerSystemAdapter",
+            dependencies: [
+                "DSMPresenters",
+                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
+            ],
+            path: "Sources/3InterfaceAdapter/DesignerSystemAdapter"
         ),
 
         .target(
-            name: "Presenters",
-            dependencies: ["UseCase"],
+            name: "DSMPresenters",
+            dependencies: [
+                "DSMUseCase"
+            ],
             path: "Sources/3InterfaceAdapter/Presenters"
         ),
         
         .target(
-            name: "UseCaseGateway",
-            dependencies: ["UseCase"],
+            name: "DSMUseCaseGateway",
+            dependencies: [
+                "DSMUseCase"
+            ],
             path: "Sources/3InterfaceAdapter/UseCaseGateway"
         ),
     
         
 
-        //  MARK: - DETAILS LAYER
+        
+//  MARK: - DETAILS
         .target(
-            name: "UI",
+            name: "DSMUI",
             dependencies: [
-                "Presenters",
-                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
+                "DSMPresenters"
             ],
-            path: "Sources/4Detail/UI"
+            path: "Sources/4Details/UI"
         ),
         
         .target(
             name: "NetworkSDK",
             dependencies: [
-                "UseCaseGateway",
+                "DSMUseCaseGateway",
                 .product(name: "NetworkSDK" , package: "NetworkSDK")
             ],
-            path: "Sources/4Detail/NetworkSDK"
+            path: "Sources/4Details/NetworkSDK"
         ),
 
 
         
         //  MARK: - MAIN LAYER
         .target(
-            name: "DesignerSystemMain",
+            name: "DesignerSystemSDK",
             dependencies: [
-                "UseCaseGateway", "DesignerSystem"
+                "DSMUseCaseGateway", "DesignerSystemAdapter"
             ],
             path: "Sources/DesignerSystemMain"
         ),
@@ -98,8 +105,7 @@ let package = Package(
         
         //  MARK: - TESTS TARGETS AREA
         
-    
-        .testTarget(name: "DomainLayerTests", dependencies: ["Domain"] ),
+        .testTarget(name: "DomainLayerTests", dependencies: ["DSMDomain"] ),
         
         
     ]
