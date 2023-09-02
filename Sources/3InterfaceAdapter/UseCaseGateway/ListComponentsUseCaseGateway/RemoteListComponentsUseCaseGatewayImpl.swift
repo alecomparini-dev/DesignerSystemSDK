@@ -7,7 +7,7 @@ import UseCase
 
 class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGateway {
     
-        
+    
     
     func listComponents(_ themeId: Int) async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
         

@@ -3,13 +3,22 @@
 //
 
 import Foundation
+import DesignerSystem
 
 class DesignerSystemMain {
     
-    //criar igual o chat gpt falou cria interfaces e o hospedeiro manda qual ele quer
-    func getComponent<T>(id: Int) -> T? {
+    
+    private let url: URL
+    
+    init(urlTheme: URL) {
+        self.url = urlTheme
+    }
+    
+    func get<T>(component: any DesignerSystemComponent ) -> T {
         
-        return nil
+        let component = component.get()
+        
+        return component as! T
     }
     
     

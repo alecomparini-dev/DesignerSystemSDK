@@ -28,7 +28,7 @@ let package = Package(
         .target(
             name: "Domain",
             dependencies: [],
-            path: "Sources/1Domain"
+            path: "Sources/1Domain/Domain"
         ),
     
     
@@ -45,7 +45,7 @@ let package = Package(
         //MARK: - INTERFACE ADAPTER LAYER
         .target(
             name: "DesignerSystem",
-            dependencies: ["Presenters"],
+            dependencies: ["Presenters", "CustomComponentsSDK"],
             path: "Sources/3InterfaceAdapter/DesignerSystem"
         ),
 
@@ -88,7 +88,7 @@ let package = Package(
         .target(
             name: "DesignerSystemMain",
             dependencies: [
-                "UseCaseGateway"
+                "UseCaseGateway", "DesignerSystem"
             ],
             path: "Sources/DesignerSystemMain"
         ),

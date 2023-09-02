@@ -11,6 +11,7 @@ public enum ListComponentsUseCaseGatewayDTO {
     
     public struct Output {
         let name: String
+        let themeId: Int
         let color: String?
         let backgroundColor: String?
         let size: Double?
@@ -22,7 +23,7 @@ public enum ListComponentsUseCaseGatewayDTO {
         let size: Double?
         let color: String?
         let family: String?
-        let weight: Int8?
+        let weight: Int?
     }
     
 
