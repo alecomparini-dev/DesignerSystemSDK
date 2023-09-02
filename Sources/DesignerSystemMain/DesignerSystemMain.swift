@@ -5,16 +5,15 @@
 import Foundation
 import DesignerSystemAdapter
 
-class DesignerSystemMain {
-    
+public class DesignerSystemMain {
     
     private let url: URL
     
-    init(urlTheme: URL) {
+    public init(urlTheme: URL) {
         self.url = urlTheme
     }
     
-    func get<T>(component: any DesignerSystemComponent ) -> T {
+    public func get<T>(component: any DesignerSystemComponent ) -> T {
         
         let component = component.get()
         
