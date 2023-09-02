@@ -4,6 +4,7 @@
 
 import Foundation
 import DesignerSystemAdapter
+import CustomComponentsSDK
 
 public class DesignerSystemMain {
     
@@ -18,6 +19,15 @@ public class DesignerSystemMain {
         let component = component.get()
         
         return component as! T
+    }
+    
+    public func CustomButtonPrimary() -> ButtonBuilder {
+        return ButtonBuilder("Button Primary")
+            .setTitleColor("#FFFFFF")
+            .setBackgroundColor(hexColor: "#4682A9")
+            .setTitleSize(24)
+            .setTitleWeight(.regular)
+            .setFontFamily("Roboto", 24)
     }
     
     
