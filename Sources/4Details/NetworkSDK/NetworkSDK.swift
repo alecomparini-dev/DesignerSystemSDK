@@ -2,7 +2,7 @@
 //
 
 import Foundation
-import UseCaseGateway
+import DSMUseCaseGateway
 import NetworkSDKMain
 
 class NetworkSDK: HTTPGet {

@@ -3,7 +3,7 @@
 //
 
 import Foundation
-import UseCase
+import DSMUseCase
 
 class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGateway {
     
