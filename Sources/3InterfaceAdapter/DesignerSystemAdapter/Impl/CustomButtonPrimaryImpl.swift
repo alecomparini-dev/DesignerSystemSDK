@@ -5,10 +5,10 @@
 import Foundation
 import CustomComponentsSDK
 
-class CustomButtonPrimaryImpl: DesignerSystemComponent  {
-    typealias T = ButtonBuilder
+public class CustomButtonPrimaryImpl: DesignerSystemComponent  {
+    public typealias T = ButtonBuilder
     
-    func get() -> ButtonBuilder {
+    public func get() -> ButtonBuilder {
         
         let button = ButtonBuilder("Button Primary")
             .setTitleColor("#FFFFFF")
