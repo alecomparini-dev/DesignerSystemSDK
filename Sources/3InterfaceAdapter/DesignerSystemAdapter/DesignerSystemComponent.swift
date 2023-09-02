@@ -4,9 +4,8 @@
 import Foundation
 
 public protocol DesignerSystemComponent {
-    associatedtype T
     
-    func get() -> T
+    func get()
 }
 
 

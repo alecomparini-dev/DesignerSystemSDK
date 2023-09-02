@@ -6,22 +6,19 @@ import Foundation
 import DesignerSystemAdapter
 import CustomComponentsSDK
 
-public class DesignerSystemMain {
+public class DSMMain {
     
     private let url: URL
     
-    public init(urlTheme: URL) {
-        self.url = urlTheme
+    public init() { }
+    
+    public func start(url: URL) {
+        
     }
     
-    public func get<T>(component: any DesignerSystemComponent ) -> T {
+
+    public static func CustomButtonPrimary() -> ButtonBuilder {
         
-        let component = component.get()
-        
-        return component as! T
-    }
-    
-    public func CustomButtonPrimary() -> ButtonBuilder {
         return ButtonBuilder("Button Primary")
             .setTitleColor("#FFFFFF")
             .setBackgroundColor(hexColor: "#4682A9")
