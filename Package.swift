@@ -72,14 +72,18 @@ let package = Package(
         
 
         
+        
+        
 //  MARK: - DETAILS
         .target(
             name: "DSMUI",
             dependencies: [
-                "DSMPresenters"
+                "DSMPresenters",
+                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/4Details/UI"
         ),
+        
         
         .target(
             name: "NetworkSDK",
@@ -92,17 +96,22 @@ let package = Package(
 
 
         
+        
+        
+        
         //  MARK: - MAIN LAYER
         .target(
             name: "DesignerSystemSDK",
             dependencies: [
                 "DSMUseCaseGateway",
                 "DesignerSystemAdapter",
-                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/DesignerSystemMain"
         ),
+        
 
+        
+        
         
         //  MARK: - TESTS TARGETS AREA
         

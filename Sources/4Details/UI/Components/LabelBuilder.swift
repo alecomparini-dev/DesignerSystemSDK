@@ -3,15 +3,15 @@
 //
 
 import UIKit
+import CustomComponentsSDK
 
-class LabelBuilder: UILabel {
+open class customText: LabelBuilder  {
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
+    public override init() {
+        super.init()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
