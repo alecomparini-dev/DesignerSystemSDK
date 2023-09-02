@@ -5,7 +5,7 @@
 import UIKit
 import CustomComponentsSDK
 
-open class customText: LabelBuilder  {
+open class CustomText: LabelBuilder  {
     
     public override init() {
         super.init()
