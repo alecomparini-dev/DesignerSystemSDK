@@ -12,7 +12,7 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DesignerSystemSDK",  targets: ["DesignerSystem"]),
+        .library(name: "DesignerSystemSDK",  targets: ["DesignerSystemMain"]),
     ],
   
     dependencies: [
@@ -32,12 +32,14 @@ let package = Package(
         ),
     
     
+        
         //MARK: - APPLICATION BUSINESS RULE LAYER
         .target(
             name: "UseCase",
             dependencies: ["Domain"],
             path: "Sources/2Application/UseCases"
         ),
+        
         
         
         //MARK: - INTERFACE ADAPTER LAYER
@@ -59,6 +61,7 @@ let package = Package(
             path: "Sources/3InterfaceAdapter/UseCaseGateway"
         ),
     
+        
 
         //  MARK: - DETAILS LAYER
         .target(
@@ -79,6 +82,19 @@ let package = Package(
             path: "Sources/4Detail/NetworkSDK"
         ),
 
+
+        
+        //  MARK: - MAIN LAYER
+        .target(
+            name: "DesignerSystemMain",
+            dependencies: [
+                "UseCaseGateway"
+            ],
+            path: "Sources/DesignerSystemMain"
+        ),
+
+        
+        
         
         //  MARK: - TESTS TARGETS AREA
         

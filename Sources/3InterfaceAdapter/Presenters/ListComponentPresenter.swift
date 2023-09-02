@@ -6,8 +6,6 @@ import Foundation
 
 public protocol ListComponentPresenter {
     
-    func listAll()
-    
     func listById(_ id: Int)
     
 }
