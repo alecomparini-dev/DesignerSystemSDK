@@ -12,7 +12,8 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DesignerSystemSDK",  targets: ["DesignerSystemSDK"]),
+        .library(name: "DSMMain",  targets: ["DSMMain"]),
+        .library(name: "DSMComponent",  targets: ["DSMComponent"]),
     ],
   
     dependencies: [
@@ -75,39 +76,32 @@ let package = Package(
         
         
 //  MARK: - DETAILS
-        .target(
-            name: "DSMUI",
-            dependencies: [
-                "DSMPresenters",
-                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
-            ],
-            path: "Sources/4Details/UI"
-        ),
-        
         
         .target(
-            name: "NetworkSDK",
+            name: "Network",
             dependencies: [
                 "DSMUseCaseGateway",
                 .product(name: "NetworkSDK" , package: "NetworkSDK")
             ],
-            path: "Sources/4Details/NetworkSDK"
+            path: "Sources/4Details/Network"
         ),
 
 
         
-        
-        
-        
         //  MARK: - MAIN LAYER
         .target(
-            name: "DesignerSystemSDK",
+            name: "DSMMain",
+            dependencies: [ ],
+            path: "Sources/DesignerSystemMain/DSMMain"
+        ),
+        
+        
+        .target(
+            name: "DSMComponent",
             dependencies: [
-                "DSMUI",
-                "DSMUseCaseGateway",
-                "DesignerSystemAdapter",
+                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
-            path: "Sources/DesignerSystemMain"
+            path: "Sources/DesignerSystemMain/Components"
         ),
         
 
