@@ -96,7 +96,9 @@ let package = Package(
         .target(
             name: "DesignerSystemSDK",
             dependencies: [
-                "DSMUseCaseGateway", "DesignerSystemAdapter"
+                "DSMUseCaseGateway",
+                "DesignerSystemAdapter",
+                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/DesignerSystemMain"
         ),
