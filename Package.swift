@@ -19,10 +19,11 @@ let package = Package(
         .package(url: "https://github.com/alecomparini-dev/NetworkSDK.git", branch: "develop"),
         .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "develop")
     ],
-
+    
     
     targets: [
-
+        
+        
         
 //MARK: - DOMAIN
         .target(
@@ -101,12 +102,10 @@ let package = Package(
         ),
 
         
-        
-        
         //  MARK: - TESTS TARGETS AREA
         
         .testTarget(name: "DomainLayerTests", dependencies: ["DSMDomain"] ),
         
-        
     ]
+    
 )
