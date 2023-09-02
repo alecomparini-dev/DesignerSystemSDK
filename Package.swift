@@ -13,7 +13,7 @@ let package = Package(
     
     products: [
         .library(name: "DSMMain",  targets: ["DSMMain"]),
-        .library(name: "DSMComponent",  targets: ["DSMComponent"]),
+        .library(name: "DSMComponent",  targets: ["DSMComponent"])
     ],
   
     dependencies: [
