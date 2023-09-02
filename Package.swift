@@ -103,6 +103,7 @@ let package = Package(
         .target(
             name: "DesignerSystemSDK",
             dependencies: [
+                "DSMUI",
                 "DSMUseCaseGateway",
                 "DesignerSystemAdapter",
             ],
