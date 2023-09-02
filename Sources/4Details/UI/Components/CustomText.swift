@@ -9,6 +9,9 @@ open class CustomText: LabelBuilder  {
     
     public override init() {
         super.init()
+        self.setSize(60)
+            .setColor("#FFFFFF")
+            .setWeight(.thin)
     }
     
     required public init?(coder: NSCoder) {
