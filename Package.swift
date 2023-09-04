@@ -92,7 +92,8 @@ let package = Package(
         .target(
             name: "DSMComponent",
             dependencies: [
-                "DSMPresenters"
+                "DSMPresenters",
+                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/DesignerSystemMain/Components"
         ),
