@@ -2,10 +2,9 @@
 //
 
 import Foundation
-import CustomComponentsSDK
 
 public protocol CustomTextPresenter {
-    func get(id: Int) -> LabelBuilder
-    func get(name: String) -> LabelBuilder
-    func get(uuid: String) -> LabelBuilder
+    func get(id: Int)
+    func get(name: String)
+    func get(uuid: String)
 }

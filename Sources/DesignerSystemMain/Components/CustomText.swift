@@ -10,17 +10,19 @@ import CustomComponentsSDK
 
 
 open class CustomText: LabelBuilder {
-    
+    private let cacheManager = CacheManager.shared
     private let id: Int
+    private let name: String = ""
     
     
 //  MARK: - INITIALIZERS
+    
     public init(id: Int) {
         self.id = id
         super.init()
         configure()
     }
-    
+
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,10 +30,9 @@ open class CustomText: LabelBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let cacheManager = CacheManager.shared
         let useCase: CustomTextUseCase = CustomTextUseCaseImpl(cacheManager: cacheManager)
         let presenter = CustomTextPresenterImpl(customTextUseCase: useCase, customText: self)
-        _ = presenter.get(id: self.id)
+        presenter.get(id: self.id)
     }
         
 }

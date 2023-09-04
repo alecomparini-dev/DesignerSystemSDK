@@ -8,44 +8,41 @@ import DSMUseCase
 public class CustomTextPresenterImpl: CustomTextPresenter {
     
     private let customTextUseCase: CustomTextUseCase
-
+    
     private let customText: LabelBuilder
     
     public init(customTextUseCase: CustomTextUseCase, customText: LabelBuilder) {
         self.customTextUseCase = customTextUseCase
         self.customText = customText
     }
-
     
-    public func get(id: Int) -> LabelBuilder {
-        
+    
+//  MARK: - PUBLIC AREA
+    
+    public func get(id: Int) {
         let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(id: id)
-        
-        guard let dto else { return LabelBuilder() }
-        
-//        let customText: LabelBuilder = LabelBuilder()
+        configComponent(dto)
+    }
+    
+    public func get(name: String) {
+        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(name: name)
+        configComponent(dto)
+    }
+    
+    public func get(uuid: String) {
+        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(uuid: uuid)
+        configComponent(dto)
+    }
+    
+    
+//  MARK: - PRIVATE AREA
+    private func configComponent(_ dto: CustomTextUseCaseDTO.Output?) {
+        guard let dto else { return }
         self.customText
             .setSize(dto.font?.size)
             .setColor(hexColor: dto.font?.color)
             .setWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
             .setFontFamily(dto.font?.family, dto.font?.size)
-
-        return customText
-    }
-    
-    public func get(name: String) -> LabelBuilder {
-//        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(name: name)
-//        guard let dto else { return LabelBuilder() }
-//
-        
-        return LabelBuilder()
-    }
-    
-    public func get(uuid: String) -> LabelBuilder {
-//        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(uuid: uuid)
-//        guard let dto else { return LabelBuilder() }
-//
-        return LabelBuilder()
     }
     
 }
