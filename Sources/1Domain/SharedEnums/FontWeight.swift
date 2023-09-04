@@ -8,14 +8,14 @@
 import Foundation
 
 public enum FontWeight: Int {
-    case bold = 1
-    case semibold = 2
-    case regular = 3
-    case ultraLight = 4
-    case thin = 5
-    case light = 6
-    case medium = 7
-    case heavy = 8
-    case black = 9
+    case bold = 0
+    case semibold = 1
+    case regular = 2
+    case ultraLight = 3
+    case thin = 4
+    case light = 5
+    case medium = 6
+    case heavy = 7
+    case black = 8
 }
 
