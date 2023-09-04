@@ -14,10 +14,10 @@ final public class CacheManager {
                   active: true,
                   backgroundColor: "transparent",
                   size: nil ,
-                  font: FontComponent.init(size: 80,
+                  font: FontComponent.init(size: 24,
                                            color: "#F6F4EB",
                                            family: "Roboto",
-                                           weight: .black,
+                                           weight: .regular,
                                            aligment: nil))
     ]
     
