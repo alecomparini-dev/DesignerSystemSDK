@@ -12,7 +12,6 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DSMMain",  targets: ["DSMMain"]),
         .library(name: "DSMComponent",  targets: ["DSMComponent"])
     ],
   
@@ -28,12 +27,18 @@ let package = Package(
         
 //MARK: - DOMAIN
         .target(
-            name: "DSMDomain",
+            name: "SharedEnums",
             dependencies: [],
-            path: "Sources/1Domain/Domain"
+            path: "Sources/1Domain/SharedEnums"
         ),
     
-    
+        .target(
+            name: "DSMDomain",
+            dependencies: ["SharedEnums"],
+            path: "Sources/1Domain/Domain"
+        ),
+        
+        
         
 //MARK: - APPLICATION
         .target(
@@ -45,19 +50,12 @@ let package = Package(
 
         
 //MARK: - INTERFACE ADAPTER
-        .target(
-            name: "DesignerSystemAdapter",
-            dependencies: [
-                "DSMPresenters",
-                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
-            ],
-            path: "Sources/3InterfaceAdapter/DesignerSystemAdapter"
-        ),
-
+        
         .target(
             name: "DSMPresenters",
             dependencies: [
                 "DSMUseCase"
+                
             ],
             path: "Sources/3InterfaceAdapter/Presenters"
         ),
@@ -65,13 +63,12 @@ let package = Package(
         .target(
             name: "DSMUseCaseGateway",
             dependencies: [
-                "DSMUseCase"
+                "DSMUseCase",
+                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/3InterfaceAdapter/UseCaseGateway"
         ),
     
-        
-
         
         
         
@@ -88,18 +85,14 @@ let package = Package(
 
 
         
-        //  MARK: - MAIN LAYER
-        .target(
-            name: "DSMMain",
-            dependencies: [ ],
-            path: "Sources/DesignerSystemMain/DSMMain"
-        ),
         
+        
+//  MARK: - MAIN LAYER
         
         .target(
             name: "DSMComponent",
             dependencies: [
-                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
+                "DSMPresenters"
             ],
             path: "Sources/DesignerSystemMain/Components"
         ),
