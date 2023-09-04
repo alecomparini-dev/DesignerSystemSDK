@@ -11,7 +11,7 @@ public struct FontComponent {
     let aligment: FontAlignment?
 }
 
-enum FontAlignment: Int {
+enum FontAlignment {
     case left
     case center
     case right
@@ -19,7 +19,7 @@ enum FontAlignment: Int {
     case natural
 }
 
-enum FontWeight: Int {
+enum FontWeight {
     case bold
     case semibold
     case regular

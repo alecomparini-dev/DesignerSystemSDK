@@ -18,18 +18,20 @@ final public class CacheComponentManager {
         return cache
     }
     
-    func getBy(name: String) -> Any? {
-        debugPrint("No implement yet")
-        return nil
-    }
-    
-    func getBy(id: Int) -> Any? {
-        debugPrint("No implement yet")
-        return nil
-    }
-    
     func clear() {
         cache.removeAll()
+    }
+    
+    func getBy(uuid: String) -> Component? {
+        return cache.first { $0.uuid == uuid }
+    }
+    
+    func getBy(id: Int) -> Component? {
+        return cache.first { $0.id == id }
+    }
+    
+    func getBy(name: String) -> [Component]? {
+        return cache.filter( { $0.name.contains(name) } )
     }
     
 }
