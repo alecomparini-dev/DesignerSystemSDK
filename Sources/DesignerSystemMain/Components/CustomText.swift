@@ -10,7 +10,7 @@ open class CustomText: LabelBuilder  {
     public override init() {
         super.init()
         self.setSize(60)
-            .setColor("#FFFFFF")
+            .setColor(hexColor: "#FFFFFF")
             .setWeight(.thin)
     }
     
