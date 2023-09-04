@@ -2,32 +2,12 @@
 
 
 import Foundation
+import SharedEnums
 
 public struct FontComponent {
-    let size: Double
-    let color: String
-    let family: String
-    let weight: FontWeight?
-    let aligment: FontAlignment?
+    public let size: CGFloat
+    public let color: String
+    public let family: String?
+    public let weight: FontWeight?
+    public let aligment: FontAlignment?
 }
-
-enum FontAlignment {
-    case left
-    case center
-    case right
-    case justified
-    case natural
-}
-
-enum FontWeight {
-    case bold
-    case semibold
-    case regular
-    case ultraLight
-    case thin
-    case light
-    case medium
-    case heavy
-    case black
-}
-

@@ -3,34 +3,47 @@
 
 import Foundation
 
-final public class CacheComponentManager {
-    static let shared = CacheComponentManager()
+final public class CacheManager {
+    public static let shared = CacheManager()
     
-    private var cache: [Component] = []
+    private var cache: [Component] = [
+        Component(uuid: "2023-08-22396e44bd-b821-4a80-a811-f206b506e02a",
+                             id: 3,
+                             themeId: 1,
+                             name: "customText",
+                             active: true,
+                             backgroundColor: "transparent",
+                             size: nil ,
+                             font: FontComponent.init(size: 24,
+                                                      color: "#F6F4EB",
+                                                      family: "Roboto",
+                                                      weight: .regular,
+                                                      aligment: nil))
+    ]
     
     private init() {}
     
-    func save(_ components: [Component]) {
+    public func save(_ components: [Component]) {
         cache.append(contentsOf: components)
     }
     
-    func get() -> [Component] {
+    public func get() -> [Component] {
         return cache
     }
     
-    func clear() {
+    public func clear() {
         cache.removeAll()
     }
     
-    func getBy(uuid: String) -> Component? {
+    public func getBy(uuid: String) -> Component? {
         return cache.first { $0.uuid == uuid }
     }
     
-    func getBy(id: Int) -> Component? {
+    public func getBy(id: Int) -> Component? {
         return cache.first { $0.id == id }
     }
     
-    func getBy(name: String) -> [Component]? {
+    public func getBy(name: String) -> [Component]? {
         return cache.filter( { $0.name.contains(name) } )
     }
     

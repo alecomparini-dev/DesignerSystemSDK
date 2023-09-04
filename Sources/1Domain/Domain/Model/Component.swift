@@ -4,15 +4,13 @@
 import Foundation
 
 public struct Component {
-    let uuid: String
-    let id: Int
-    let themeId: Int
-    let name: String
-    let active: Bool
-    let color: String
-    let size: Double
-    let create: Date
-    let changedDate: Date?
-    let font: FontComponent?
+    public let uuid: String
+    public let id: Int
+    public let themeId: Int
+    public let name: String
+    public let active: Bool
+    public let backgroundColor: String
+    public let size: CGFloat?
+    public let font: FontComponent?
     
 }

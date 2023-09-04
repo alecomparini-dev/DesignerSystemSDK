@@ -10,21 +10,21 @@ public enum ListComponentsUseCaseGatewayDTO {
     }
     
     public struct Output {
-        let name: String
-        let themeId: Int
-        let color: String?
-        let backgroundColor: String?
-        let size: Double?
-        let create: Date?
-        let font: Font?
+        public let name: String
+        public let themeId: Int
+        public let color: String?
+        public let backgroundColor: String?
+        public let size: Double?
+        public let create: Date?
+        public let font: ListComponentsUseCaseGatewayDTO.Font?
     }
-    
+
     public struct Font {
-        let size: Double?
-        let color: String?
-        let family: String?
-        let weight: Int?
+        public let size: Double?
+        public let color: String?
+        public let family: String?
+        public let weight: Int?
     }
-    
+
 
 }
