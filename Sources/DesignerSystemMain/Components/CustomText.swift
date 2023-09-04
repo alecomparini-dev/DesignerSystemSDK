@@ -9,18 +9,19 @@ import DSMUseCase
 import CustomComponentsSDK
 
 
-open class CustomText {
+open class CustomText: LabelBuilder {
     
     private let id: Int
-    private var customText: LabelBuilder
+//    private var customText: LabelBuilder
     
-    var get: LabelBuilder { self.customText }
+//    public var get: LabelBuilder { self.customText }
     
     
 //  MARK: - INITIALIZERS
     public init(id: Int) {
-        self.customText = LabelBuilder()
+//        self.customText = LabelBuilder()
         self.id = id
+        super.init()
         configure()
     }
     
@@ -33,9 +34,8 @@ open class CustomText {
     private func configure() {
         let cacheManager = CacheManager.shared
         let useCase: CustomTextUseCase = CustomTextUseCaseImpl(cacheManager: cacheManager)
-        let presenter = CustomTextPresenterImpl(customTextUseCase: useCase)
-//        let presenter = CustomTextPresenterImpl()
-        self.customText = presenter.get(id: self.id)
+        let presenter = CustomTextPresenterImpl(customTextUseCase: useCase, customText: self)
+        _ = presenter.get(id: self.id)
     }
         
 }

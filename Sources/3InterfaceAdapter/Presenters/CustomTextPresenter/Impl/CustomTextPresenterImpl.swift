@@ -9,8 +9,11 @@ public class CustomTextPresenterImpl: CustomTextPresenter {
     
     private let customTextUseCase: CustomTextUseCase
 
-    public init(customTextUseCase: CustomTextUseCase) {
+    private let customText: LabelBuilder
+    
+    public init(customTextUseCase: CustomTextUseCase, customText: LabelBuilder) {
         self.customTextUseCase = customTextUseCase
+        self.customText = customText
     }
 
     
@@ -20,7 +23,8 @@ public class CustomTextPresenterImpl: CustomTextPresenter {
         
         guard let dto else { return LabelBuilder() }
         
-        let customText: LabelBuilder = LabelBuilder()
+//        let customText: LabelBuilder = LabelBuilder()
+        self.customText
             .setSize(dto.font?.size)
             .setColor(hexColor: dto.font?.color)
             .setWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
