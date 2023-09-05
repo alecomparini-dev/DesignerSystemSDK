@@ -20,7 +20,7 @@ public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGatewa
         self.queryParameters = queryParameters
     }
     
-    public func listComponents(_ themeId: Int) async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
+    public func listComponents() async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
      
         let data = try await httpGetClient.get(url: url, headers: headers, queryParameters: queryParameters)
         guard let data else { return [] }

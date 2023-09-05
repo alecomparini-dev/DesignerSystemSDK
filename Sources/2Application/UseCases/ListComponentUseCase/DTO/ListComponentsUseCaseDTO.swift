@@ -6,14 +6,6 @@ import DSMDomain
 
 public enum ListComponentsUseCaseDTO {
     
-    public struct Input {
-        public let themeId: Int
-        
-        public init(themeId: Int) {
-            self.themeId = themeId
-        }
-    }
-    
     public struct Output {
         public let name: String?
         public let color: String?

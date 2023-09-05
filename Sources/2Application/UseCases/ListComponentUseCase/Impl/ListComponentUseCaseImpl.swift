@@ -17,9 +17,9 @@ public class ListComponentsUseCaseImpl: ListComponentUseCase {
         self.cacheManager = cacheManager
     }
     
-    public func list(_ request: ListComponentsUseCaseDTO.Input) async throws {
+    public func list() async throws {
         
-        let componentsDTO: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents(request.themeId)
+        let componentsDTO: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents()
         
         let components: [Component] = MapperDTOToComponent.mapper(componentsDTO)
         

@@ -5,5 +5,5 @@ import Foundation
 
 
 public protocol ListComponentsUseCaseGateway {
-    func listComponents(_ themeId: Int) async throws -> [ListComponentsUseCaseGatewayDTO.Output]
+    func listComponents() async throws -> [ListComponentsUseCaseGatewayDTO.Output]
 }
