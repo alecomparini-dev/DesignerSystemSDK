@@ -42,6 +42,7 @@ public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
         guard let dto else { return }
         
         customButtom
+            .setTitle("")
             .setTitleSize(dto.font?.size)
             .setTitleColor(hexColor: dto.font?.color)
             .setTitleColor(named: dto.font?.color)
