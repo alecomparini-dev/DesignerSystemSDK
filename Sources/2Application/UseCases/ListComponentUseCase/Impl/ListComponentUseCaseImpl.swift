@@ -4,21 +4,28 @@
 
 import Foundation
 
+import DSMDomain
+import SharedEnums
+
 public class ListComponentsUseCaseImpl: ListComponentUseCase {
     
     private let listComponentGateway: ListComponentsUseCaseGateway
+    private let cacheManager: CacheManager
     
-    public init(listComponentGateway: ListComponentsUseCaseGateway) {
+    public init(listComponentGateway: ListComponentsUseCaseGateway, cacheManager: CacheManager) {
         self.listComponentGateway = listComponentGateway
+        self.cacheManager = cacheManager
     }
     
     public func list(_ request: ListComponentsUseCaseDTO.Input) async throws {
         
-        let components: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents(request.themeId)
+        let componentsDTO: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents(request.themeId)
         
+        let components: [Component] = MapperDTOToComponent.mapper(componentsDTO)
         
-        print(components)
+        cacheManager.save(components)
         
     }
-    
+
 }
+

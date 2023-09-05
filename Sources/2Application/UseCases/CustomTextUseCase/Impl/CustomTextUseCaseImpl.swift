@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 import DSMDomain
 
 public class CustomTextUseCaseImpl: CustomTextUseCase {
