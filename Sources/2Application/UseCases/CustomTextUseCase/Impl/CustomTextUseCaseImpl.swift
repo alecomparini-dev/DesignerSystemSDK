@@ -1,7 +1,3 @@
-//
-//  File.swift
-//  
-//
 //  Created by Alessandro Comparini on 04/09/23.
 //
 
@@ -18,27 +14,23 @@ public class CustomTextUseCaseImpl: CustomTextUseCase {
     }
     
     public func get(id: Int) -> CustomTextUseCaseDTO.Output? {
-        
         let component: Component? = cacheManager.getBy(id: id)
         guard let component else {return nil}
         
         let dto = MapperComponentToDTO.mapper(component)
-        
         return dto
     }
     
     public func get(name: String) -> CustomTextUseCaseDTO.Output? {
+        let component: Component? = cacheManager.getBy(name: name)
+        guard let component else {return nil}
         
-//        let component: Component = cacheManager.
-        
-        return CustomTextUseCaseDTO.Output()
+        let dto = MapperComponentToDTO.mapper(component)
+        return dto
     }
     
     
     public func get(uuid: String) -> CustomTextUseCaseDTO.Output? {
-        
-//        let component: Component = cacheManager.
-        
         return CustomTextUseCaseDTO.Output()
     }
     

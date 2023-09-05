@@ -14,10 +14,10 @@ typealias ComponentsCodable = [ComponentCodable]
 
 struct ComponentCodable: Codable {
     let id: Int
-    let themeID: Int?
+    let name: String
+    let themeID: Int
     let theme: ThemeCodable?
     let uid: String?
-    let name: String?
     let foregroundColor: String?
     let backgroundColor: String?
     let fontName: String?
@@ -54,9 +54,9 @@ extension ComponentsCodable {
         return self.map {
             ListComponentsUseCaseGatewayDTO.Output(
                 id: $0.id,
-                name: $0.name ?? "",
+                name: $0.name,
                 uuid: $0.uid,
-                themeId: $0.themeID ?? 1,
+                themeId: $0.themeID,
                 backgroundColor: $0.backgroundColor,
                 create: $0.creationDate,
                 active: !($0.isInativo ?? true),
