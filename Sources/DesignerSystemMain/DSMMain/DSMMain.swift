@@ -13,16 +13,23 @@ import Network
 public class DSMMain {
     
     private let url: URL
+    private let headers: [String : String]
+    private let queryParameters: [String : String]
     
-    public init(url: URL) {
+    public init(url: URL, headers: [String : String] = [:], queryParameters: [String : String] = [:]) {
         self.url = url
+        self.headers = headers
+        self.queryParameters = queryParameters
     }
     
-    public func start(themeId: Int) async throws {
+    public func start(themeId: Int, uIdFirebase: String) async throws {
         
         let httpGetClient: HTTPGet = Network()
                 
-        let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl(httpGetClient: httpGetClient, url: self.url)
+        let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl(httpGetClient: httpGetClient,
+                                                                                 url: self.url,
+                                                                                 headers: self.headers,
+                                                                                 queryParameters: self.queryParameters)
         
         let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway, cacheManager: CacheManager.shared)
         

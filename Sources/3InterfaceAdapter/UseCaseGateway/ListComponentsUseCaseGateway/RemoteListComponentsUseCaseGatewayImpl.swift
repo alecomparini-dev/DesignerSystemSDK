@@ -10,8 +10,8 @@ public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGatewa
     
     private let httpGetClient: HTTPGet
     private let url: URL
-    private let headers: [String:String]
-    private let queryParameters: [String:String]
+    private let headers: [String : String]
+    private let queryParameters: [String : String]
     
     public init(httpGetClient: HTTPGet, url: URL, headers: [String : String] = [:], queryParameters: [String : String] = [:]) {
         self.httpGetClient = httpGetClient
