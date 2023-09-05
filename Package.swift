@@ -12,7 +12,8 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DSMComponent",  targets: ["DSMComponent"])
+        .library(name: "DSMComponent",  targets: ["DSMComponent"]),
+        .library(name: "DSMMain",  targets: ["DSMMain"])
     ],
   
     dependencies: [
@@ -55,7 +56,6 @@ let package = Package(
             name: "DSMPresenters",
             dependencies: [
                 "DSMUseCase"
-                
             ],
             path: "Sources/3InterfaceAdapter/Presenters"
         ),
@@ -64,11 +64,18 @@ let package = Package(
             name: "DSMUseCaseGateway",
             dependencies: [
                 "DSMUseCase",
-                .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/3InterfaceAdapter/UseCaseGateway"
         ),
     
+        
+        .target(
+            name: "DesignerSystemAdapter",
+            dependencies: [
+                "DSMUseCase"
+            ],
+            path: "Sources/3InterfaceAdapter/DesignerSystemAdapter"
+        ),
         
         
         
@@ -96,6 +103,15 @@ let package = Package(
                 .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/DesignerSystemMain/Components"
+        ),
+        
+            
+        .target(
+            name: "DSMMain",
+            dependencies: [
+                "DesignerSystemAdapter"
+            ],
+            path: "Sources/DesignerSystemMain/DSMMain"
         ),
         
 

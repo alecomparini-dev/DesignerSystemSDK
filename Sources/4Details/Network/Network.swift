@@ -5,9 +5,17 @@ import Foundation
 import DSMUseCaseGateway
 import NetworkSDK
 
-class Network: HTTPGet {
+public class Network: HTTPGet {
     
-    func get(url: URL, queryParameters: Dictionary<String, String>) async throws -> Data? {
+    
+    public func get(url: URL, headers: [String : String]?, queryParameters: [String : String]?) async throws -> Data? {
+        
+        let network = NetworkSDK(url: url, headers: headers, queryParameters: queryParameters)
+        
+    }
+    
+    
+    public func get(url: URL, queryParameters: Dictionary<String, String>?) async throws -> Data? {
         
         let network = NetworkSDK(url: url)
         
