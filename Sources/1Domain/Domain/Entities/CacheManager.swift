@@ -7,18 +7,18 @@ final public class CacheManager {
     public static let shared = CacheManager()
     
     private var cache: [Component] = [
-        Component(uuid: "2023-08-22396e44bd-b821-4a80-a811-f206b506e02a",
-                  id: 3,
-                  themeId: 1,
-                  name: "customText",
-                  active: true,
-                  backgroundColor: "transparent",
-                  size: nil ,
-                  font: FontComponent.init(size: 24,
-                                           color: "#6d1212",
-                                           family: "Roboto",
-                                           weight: .black,
-                                           aligment: nil))
+//        Component(uuid: "2023-08-22396e44bd-b821-4a80-a811-f206b506e02a",
+//                  id: 3,
+//                  themeId: 1,
+//                  name: "customText",
+//                  active: true,
+//                  backgroundColor: "transparent",
+//                  size: nil ,
+//                  font: FontComponent.init(size: 24,
+//                                           color: "#6d1212",
+//                                           family: "Roboto",
+//                                           weight: .black,
+//                                           aligment: nil))
     ]
     
     private init() {}
