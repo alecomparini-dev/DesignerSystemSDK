@@ -5,8 +5,8 @@ import Foundation
 
 public struct Component {
     public let id: Int
-    public let themeId: Int
     public let name: String
+    public let themeId: Int
     public let uuid: String?
     public let active: Bool?
     public let backgroundColor: String

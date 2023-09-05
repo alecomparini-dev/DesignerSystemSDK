@@ -1,4 +1,3 @@
-//
 //  Created by Alessandro Comparini on 29/08/23.
 //
 
@@ -11,15 +10,15 @@ import DSMUseCase
 
 
 open class CustomText: LabelBuilder {
+    private static let identifier = "customText"
+    
     private let cacheManager = CacheManager.shared
-    private let id: Int
     private let name: String = ""
     
     
 //  MARK: - INITIALIZERS
     
-    public init(id: Int) {
-        self.id = id
+    public override init() {
         super.init()
         configure()
     }
@@ -33,7 +32,7 @@ open class CustomText: LabelBuilder {
     private func configure() {
         let useCase: CustomTextUseCase = CustomTextUseCaseImpl(cacheManager: cacheManager)
         let presenter = CustomTextPresenterImpl(customTextUseCase: useCase, customText: self)
-        presenter.get(id: self.id)
+        presenter.get(name: CustomText.identifier)
     }
         
 }
