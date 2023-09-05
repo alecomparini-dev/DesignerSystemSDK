@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol StartDSMAdapter {
-    func start(themeId: Int) async throws
+    func start() async throws
 }

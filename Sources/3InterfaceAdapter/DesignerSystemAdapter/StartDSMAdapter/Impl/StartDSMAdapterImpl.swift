@@ -16,11 +16,9 @@ public class StartDSMAdapterImpl: StartDSMAdapter {
         self.listComponentsUseCase = listComponentsUseCase
     }
     
-    public func start(themeId: Int) async throws {
+    public func start() async throws {
         
-        let request = ListComponentsUseCaseDTO.Input(themeId: themeId)
-        
-        try await listComponentsUseCase.list(request)
+        try await listComponentsUseCase.list()
         
     }
     

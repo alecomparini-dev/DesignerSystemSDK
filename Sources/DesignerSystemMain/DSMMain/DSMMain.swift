@@ -22,7 +22,7 @@ public class DSMMain {
         self.queryParameters = queryParameters
     }
     
-    public func start(themeId: Int, uIdFirebase: String) async throws {
+    public func start() async throws {
         
         let httpGetClient: HTTPGet = Network()
                 
@@ -35,7 +35,7 @@ public class DSMMain {
         
         let dsmAdapter = StartDSMAdapterImpl(listComponentsUseCase: listComponentsUseCase)
         
-        try await dsmAdapter.start(themeId: themeId)
+        try await dsmAdapter.start()
         
     }
 

@@ -5,5 +5,5 @@
 import Foundation
 
 public protocol ListComponentUseCase {
-    func list(_ request: ListComponentsUseCaseDTO.Input) async throws
+    func list() async throws
 }
