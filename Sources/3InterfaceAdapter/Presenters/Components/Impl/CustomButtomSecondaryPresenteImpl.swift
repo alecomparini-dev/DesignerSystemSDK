@@ -5,7 +5,7 @@ import Foundation
 import CustomComponentsSDK
 import DSMUseCase
 
-public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
+public class CustomButtomSecondaryPresenteImpl: ComponentPresenter {
     
     private let getComponentUseCase: GetComponentUseCase
     
