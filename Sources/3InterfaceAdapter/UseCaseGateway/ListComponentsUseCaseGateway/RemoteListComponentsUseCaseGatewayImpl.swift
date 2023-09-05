@@ -23,10 +23,11 @@ public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGatewa
     public func listComponents(_ themeId: Int) async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
      
         let data = try await httpGetClient.get(url: url, headers: headers, queryParameters: queryParameters)
+        guard let data else { return [] }
         
+        let componentsCodable: Components = try JSONDecoder().decode(Components.self, from: data)
         
-        
-        return []
+        return componentsCodable.mapperToDTO()
     }
     
     

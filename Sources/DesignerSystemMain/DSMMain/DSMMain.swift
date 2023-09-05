@@ -6,6 +6,7 @@ import Foundation
 import DesignerSystemAdapter
 import DSMUseCase
 import DSMUseCaseGateway
+import Network
 
 public class DSMMain {
     
@@ -17,7 +18,9 @@ public class DSMMain {
     
     public func start(themeId: Int) async throws {
         
-        let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl()
+        let httpGetClient: HTTPGet = Network()
+                
+        let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl(httpGetClient: httpGetClient, url: self.url)
         
         let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway)
         
