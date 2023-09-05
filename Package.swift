@@ -12,8 +12,8 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DSMComponent",  targets: ["DSMComponent"]),
-        .library(name: "DSMMain",  targets: ["DSMMain"])
+        .library(name: "DSMMain",  targets: ["DSMMain"]),
+        .library(name: "DSMComponent",  targets: ["DSMComponent"])
     ],
   
     dependencies: [
@@ -24,9 +24,7 @@ let package = Package(
     
     targets: [
         
-        
-        
-//MARK: - DOMAIN
+        //MARK: - 1 DOMAIN
         .target(
             name: "SharedEnums",
             dependencies: [],
@@ -40,18 +38,15 @@ let package = Package(
         ),
         
         
-        
-//MARK: - APPLICATION
+        //MARK: - 2 APPLICATION
         .target(
             name: "DSMUseCase",
             dependencies: ["DSMDomain"],
             path: "Sources/2Application/UseCases"
         ),
         
-
         
-//MARK: - INTERFACE ADAPTER
-        
+        //MARK: - 3 INTERFACE ADAPTER
         .target(
             name: "DSMPresenters",
             dependencies: [
@@ -68,7 +63,6 @@ let package = Package(
             path: "Sources/3InterfaceAdapter/UseCaseGateway"
         ),
     
-        
         .target(
             name: "DesignerSystemAdapter",
             dependencies: [
@@ -78,9 +72,7 @@ let package = Package(
         ),
         
         
-        
-//  MARK: - DETAILS
-        
+        //  MARK: - 4 DETAILS
         .target(
             name: "Network",
             dependencies: [
@@ -90,13 +82,17 @@ let package = Package(
             path: "Sources/4Details/Network"
         ),
 
-
         
-        
-        
-//  MARK: - MAIN LAYER
-        
+        //  MARK: - MAIN LAYER
         .target(
+            name: "DSMMain",
+            dependencies: [
+                "DesignerSystemAdapter", "Network"
+            ],
+            path: "Sources/DesignerSystemMain/DSMMain"
+        ),
+
+       .target(
             name: "DSMComponent",
             dependencies: [
                 "DSMPresenters",
@@ -105,16 +101,6 @@ let package = Package(
             path: "Sources/DesignerSystemMain/Components"
         ),
         
-            
-        .target(
-            name: "DSMMain",
-            dependencies: [
-                "DesignerSystemAdapter", "Network"
-            ],
-            path: "Sources/DesignerSystemMain/DSMMain"
-        ),
-        
-
         
         
         
