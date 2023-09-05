@@ -42,7 +42,7 @@ public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
         guard let dto else { return }
         
         customButtom
-            .setTitle("")
+//            .setTitle("")
             .setTitleSize(dto.font?.size)
             .setTitleColor(hexColor: dto.font?.color)
             .setTitleColor(named: dto.font?.color)
@@ -50,6 +50,11 @@ public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
             .setBackgroundColor(hexColor: dto.backgroundColor)
             .setTitleWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
             .setFontFamily(dto.font?.family, dto.font?.size)
+        
+            .setBorder { build in
+                build
+                    .setCornerRadius(12)
+            }
     }
     
 }
