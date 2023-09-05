@@ -13,8 +13,7 @@ open class CustomText: LabelBuilder {
     private static let identifier = "customText"
     
     private let cacheManager = CacheManager.shared
-    private let name: String = ""
-    
+
     
 //  MARK: - INITIALIZERS
     
@@ -23,15 +22,11 @@ open class CustomText: LabelBuilder {
         configure()
     }
 
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let useCase: CustomTextUseCase = CustomTextUseCaseImpl(cacheManager: cacheManager)
-        let presenter = CustomTextPresenterImpl(customTextUseCase: useCase, customText: self)
+        let useCase: GetComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
+        let presenter = CustomTextPresenterImpl(getComponentUseCase: useCase, customText: self)
         presenter.get(name: CustomText.identifier)
     }
         

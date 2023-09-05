@@ -7,12 +7,12 @@ import DSMUseCase
 
 public class CustomTextPresenterImpl: CustomTextPresenter {
     
-    private let customTextUseCase: CustomTextUseCase
+    private let getComponentUseCase: GetComponentUseCase
     
     private let customText: LabelBuilder
     
-    public init(customTextUseCase: CustomTextUseCase, customText: LabelBuilder) {
-        self.customTextUseCase = customTextUseCase
+    public init(getComponentUseCase: GetComponentUseCase, customText: LabelBuilder) {
+        self.getComponentUseCase = getComponentUseCase
         self.customText = customText
     }
     
@@ -20,27 +20,30 @@ public class CustomTextPresenterImpl: CustomTextPresenter {
 //  MARK: - PUBLIC AREA
     
     public func get(id: Int) {
-        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(id: id)
+        let dto: GetComponentUseCaseDTO.Output? = getComponentUseCase.get(id: id)
         configComponent(dto)
     }
     
     public func get(name: String) {
-        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(name: name)
+        let dto: GetComponentUseCaseDTO.Output? = getComponentUseCase.get(name: name)
         configComponent(dto)
     }
     
     public func get(uuid: String) {
-        let dto: CustomTextUseCaseDTO.Output? = customTextUseCase.get(uuid: uuid)
+        let dto: GetComponentUseCaseDTO.Output? = getComponentUseCase.get(uuid: uuid)
         configComponent(dto)
     }
     
     
 //  MARK: - PRIVATE AREA
-    private func configComponent(_ dto: CustomTextUseCaseDTO.Output?) {
+    private func configComponent(_ dto: GetComponentUseCaseDTO.Output?) {
         guard let dto else { return }
         self.customText
             .setSize(dto.font?.size)
             .setColor(hexColor: dto.font?.color)
+            .setColor(named: dto.font?.color)
+            .setBackgroundColor(named: dto.backgroundColor)
+            .setBackgroundColor(hexColor: dto.backgroundColor)
             .setWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
             .setFontFamily(dto.font?.family, dto.font?.size)
     }

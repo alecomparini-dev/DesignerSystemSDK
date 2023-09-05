@@ -4,7 +4,7 @@
 import Foundation
 import SharedEnums
 
-public enum CustomTextUseCaseDTO {
+public enum GetComponentUseCaseDTO {
     public struct Output {
         public var backgroundColor: String?
         public var font: Font?
