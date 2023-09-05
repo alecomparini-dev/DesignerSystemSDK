@@ -3,10 +3,11 @@
 //
 
 import UIKit
+
+import CustomComponentsSDK
 import DSMDomain
 import DSMPresenters
 import DSMUseCase
-import CustomComponentsSDK
 
 
 open class CustomText: LabelBuilder {

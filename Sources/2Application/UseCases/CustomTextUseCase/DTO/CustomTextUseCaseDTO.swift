@@ -7,7 +7,6 @@ import SharedEnums
 public enum CustomTextUseCaseDTO {
     public struct Output {
         public var backgroundColor: String?
-        public var size: CGFloat?
         public var font: Font?
     }
     

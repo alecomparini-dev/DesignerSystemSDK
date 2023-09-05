@@ -2,6 +2,7 @@
 
 
 import Foundation
+
 import SharedEnums
 
 public struct FontComponent {
@@ -9,5 +10,11 @@ public struct FontComponent {
     public let color: String
     public let family: String?
     public let weight: FontWeight?
-    public let aligment: FontAlignment?
+    
+    public init(size: CGFloat, color: String, family: String?, weight: FontWeight?  ) {
+        self.size = size
+        self.color = color
+        self.family = family
+        self.weight = weight
+    }
 }

@@ -2,9 +2,10 @@
 //
 
 import Foundation
+
 import DSMUseCaseGateway
-import NetworkSDK
 import NetworkInterfaces
+import NetworkSDK
 
 public class Network: HTTPGet {
     

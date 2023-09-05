@@ -3,7 +3,9 @@
 //
 
 import Foundation
+
 import DesignerSystemAdapter
+import DSMDomain
 import DSMUseCase
 import DSMUseCaseGateway
 import Network
@@ -22,7 +24,7 @@ public class DSMMain {
                 
         let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl(httpGetClient: httpGetClient, url: self.url)
         
-        let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway)
+        let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway, cacheManager: CacheManager.shared)
         
         let dsmAdapter = StartDSMAdapterImpl(listComponentsUseCase: listComponentsUseCase)
         
