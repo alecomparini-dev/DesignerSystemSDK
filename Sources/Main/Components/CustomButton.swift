@@ -12,8 +12,6 @@ import DSMUseCase
 open class CustomButton: ButtonBuilder {
     private static let identifier = "customButton"
     
-    private let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: CacheManager.shared)
-
     
 //  MARK: - INITIALIZERS
     
@@ -25,6 +23,8 @@ open class CustomButton: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
+        let cacheManager = CacheManager.shared
+        let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
         let presenter = CustomButtomPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
         presenter.get(name: CustomButton.identifier)
     }
