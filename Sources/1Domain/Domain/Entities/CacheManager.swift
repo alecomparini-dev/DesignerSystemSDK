@@ -15,9 +15,9 @@ final public class CacheManager {
                   backgroundColor: "transparent",
                   size: nil ,
                   font: FontComponent.init(size: 24,
-                                           color: "#F6F4EB",
+                                           color: "#6d1212",
                                            family: "Roboto",
-                                           weight: .regular,
+                                           weight: .black,
                                            aligment: nil))
     ]
     
