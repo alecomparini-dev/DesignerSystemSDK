@@ -21,7 +21,7 @@ struct ComponentCodable: Codable {
     let foregroundColor: String?
     let backgroundColor: String?
     let fontName: String?
-    let fontSize: Int?
+    let fontSize: CGFloat?
     let style: Int?
     let isInativo: Bool?
     let creationDate: String?
@@ -60,8 +60,8 @@ extension ComponentsCodable {
                 backgroundColor: $0.backgroundColor,
                 create: $0.creationDate,
                 active: !($0.isInativo ?? true),
-                font: ListComponentsUseCaseGatewayDTO.Font(
-                    size: CGFloat($0.fontSize ?? 14) ,
+                font: ListComponentsUseCaseGatewayDTO.Font (
+                    size: $0.fontSize  ,
                     color: $0.foregroundColor,
                     family: $0.fontName,
                     weight: (($0.style ?? 1) - 1)
