@@ -5,11 +5,26 @@
 import Foundation
 import DSMUseCase
 
-class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGateway {
+
+public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGateway {
     
+    private let httpGetClient: HTTPGet
+    private let url: URL
+    private let headers: [String:String]
+    private let queryParameters: [String:String]
     
+    public init(httpGetClient: HTTPGet, url: URL, headers: [String : String] = [:], queryParameters: [String : String] = [:]) {
+        self.httpGetClient = httpGetClient
+        self.url = url
+        self.headers = headers
+        self.queryParameters = queryParameters
+    }
     
-    func listComponents(_ themeId: Int) async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
+    public func listComponents(_ themeId: Int) async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
+     
+        let data = try await httpGetClient.get(url: url, headers: headers, queryParameters: queryParameters)
+        
+        
         
         return []
     }

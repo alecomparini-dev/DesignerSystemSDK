@@ -3,15 +3,30 @@
 //
 
 import Foundation
+import DesignerSystemAdapter
+import DSMUseCase
+import DSMUseCaseGateway
 
 public class DSMMain {
     
-    public init() { }
+    private let url: URL
     
-    public func start(url: URL) {
-        
+    init(url: URL) {
+        self.url = url
     }
     
+    public func start(themeId: Int) async throws {
+        
+        let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl()
+        
+        let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway)
+        
+        let dsmAdapter = StartDSMAdapterImpl(listComponentsUseCase: listComponentsUseCase)
+        
+        try await dsmAdapter.start(themeId: themeId)
+        
+    }
+
     
     
 }

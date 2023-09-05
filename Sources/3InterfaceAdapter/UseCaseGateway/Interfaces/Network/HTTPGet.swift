@@ -4,6 +4,6 @@
 import Foundation
 
 public protocol HTTPGet {
-    func get(url: URL, queryParameters: Dictionary<String, String>) async throws -> Data?
+    func get(url: URL, headers: [String: String]?, queryParameters: [String: String]?) async throws -> Data?
 }
 

@@ -4,21 +4,21 @@
 
 import Foundation
 
-class ListComponentsUseCaseImpl: ListComponentUseCase {
+public class ListComponentsUseCaseImpl: ListComponentUseCase {
     
     private let listComponentGateway: ListComponentsUseCaseGateway
     
-    init(listComponentGateway: ListComponentsUseCaseGateway) {
+    public init(listComponentGateway: ListComponentsUseCaseGateway) {
         self.listComponentGateway = listComponentGateway
     }
     
-    func list(_ request: ListComponentsUseCaseDTO.Input) async throws -> [ListComponentsUseCaseDTO.Output] {
+    public func list(_ request: ListComponentsUseCaseDTO.Input) async throws {
         
         let components: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents(request.themeId)
         
+        
         print(components)
         
-        return []
     }
     
 }
