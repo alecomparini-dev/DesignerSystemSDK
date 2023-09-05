@@ -29,7 +29,6 @@ public class GetComponentUseCaseImpl: GetComponentUseCase {
         return dto
     }
     
-    
     public func get(uuid: String) -> GetComponentUseCaseDTO.Output? {
         return GetComponentUseCaseDTO.Output()
     }
