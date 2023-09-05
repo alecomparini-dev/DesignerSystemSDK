@@ -5,7 +5,7 @@ import Foundation
 
 import DSMDomain
 
-public class CustomTextUseCaseImpl: CustomTextUseCase {
+public class GetComponentUseCaseImpl: GetComponentUseCase {
 
     private let cacheManager: CacheManager
     
@@ -13,7 +13,7 @@ public class CustomTextUseCaseImpl: CustomTextUseCase {
         self.cacheManager = cacheManager
     }
     
-    public func get(id: Int) -> CustomTextUseCaseDTO.Output? {
+    public func get(id: Int) -> GetComponentUseCaseDTO.Output? {
         let component: Component? = cacheManager.getBy(id: id)
         guard let component else {return nil}
         
@@ -21,7 +21,7 @@ public class CustomTextUseCaseImpl: CustomTextUseCase {
         return dto
     }
     
-    public func get(name: String) -> CustomTextUseCaseDTO.Output? {
+    public func get(name: String) -> GetComponentUseCaseDTO.Output? {
         let component: Component? = cacheManager.getBy(name: name)
         guard let component else {return nil}
         
@@ -30,8 +30,8 @@ public class CustomTextUseCaseImpl: CustomTextUseCase {
     }
     
     
-    public func get(uuid: String) -> CustomTextUseCaseDTO.Output? {
-        return CustomTextUseCaseDTO.Output()
+    public func get(uuid: String) -> GetComponentUseCaseDTO.Output? {
+        return GetComponentUseCaseDTO.Output()
     }
     
     

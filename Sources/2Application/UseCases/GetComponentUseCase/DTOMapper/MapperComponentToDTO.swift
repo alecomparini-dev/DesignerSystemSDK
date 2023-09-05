@@ -7,10 +7,10 @@ import DSMDomain
 
 struct MapperComponentToDTO {
     
-    static func mapper(_ comp: Component) -> CustomTextUseCaseDTO.Output {
-        let dto = CustomTextUseCaseDTO.Output(
+    static func mapper(_ comp: Component) -> GetComponentUseCaseDTO.Output {
+        let dto = GetComponentUseCaseDTO.Output(
             backgroundColor: comp.backgroundColor,
-            font: CustomTextUseCaseDTO.Font(
+            font: GetComponentUseCaseDTO.Font(
                 family: comp.font?.family,
                 color: comp.font?.color,
                 size: comp.font?.size,

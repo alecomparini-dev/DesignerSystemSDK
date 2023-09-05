@@ -89,7 +89,7 @@ let package = Package(
             dependencies: [
                 "DesignerSystemAdapter", "Network"
             ],
-            path: "Sources/DesignerSystemMain/DSMMain"
+            path: "Sources/Main/DSMMain"
         ),
 
        .target(
@@ -98,7 +98,7 @@ let package = Package(
                 "DSMPresenters",
                 .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
-            path: "Sources/DesignerSystemMain/Components"
+            path: "Sources/Main/Components"
         ),
         
         
