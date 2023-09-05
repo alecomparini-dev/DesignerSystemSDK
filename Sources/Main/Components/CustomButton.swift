@@ -9,8 +9,8 @@ import DSMPresenters
 import DSMUseCase
 
 
-open class CustomButtonSecondary: ButtonBuilder {
-    private static let identifier = "customButtonSecundary"
+open class CustomButton: ButtonBuilder {
+    private static let identifier = "customButton"
     
     private let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: CacheManager.shared)
 
@@ -25,8 +25,8 @@ open class CustomButtonSecondary: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let presenter = CustomButtomSecondaryPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
-        presenter.get(name: CustomButtonSecondary.identifier)
+        let presenter = CustomButtomPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
+        presenter.get(name: CustomButton.identifier)
     }
         
 }
