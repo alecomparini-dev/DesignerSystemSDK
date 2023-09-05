@@ -4,24 +4,23 @@
 import Foundation
 import DSMUseCaseGateway
 import NetworkSDK
+import NetworkInterfaces
 
 public class Network: HTTPGet {
     
     
+    public init() {}
+    
     public func get(url: URL, headers: [String : String]?, queryParameters: [String : String]?) async throws -> Data? {
         
-        let network = NetworkSDK(url: url, headers: headers, queryParameters: queryParameters)
+        let endpoint = EndpointDTO(url: url, headers: headers, queryParameters: queryParameters)
+        
+        let network = NetworkSDK(endpoint: endpoint)
+        
+        return try await network.get()
         
     }
     
     
-    public func get(url: URL, queryParameters: Dictionary<String, String>?) async throws -> Data? {
-        
-        let network = NetworkSDK(url: url)
-        
-        print(try await network.get())
-        
-        return nil
-    }
     
 }

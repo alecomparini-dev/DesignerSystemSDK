@@ -109,7 +109,7 @@ let package = Package(
         .target(
             name: "DSMMain",
             dependencies: [
-                "DesignerSystemAdapter"
+                "DesignerSystemAdapter", "Network"
             ],
             path: "Sources/DesignerSystemMain/DSMMain"
         ),
