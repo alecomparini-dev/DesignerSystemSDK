@@ -4,6 +4,6 @@
 
 import Foundation
 
-protocol ListComponentUseCase {
-    func list(_ request: ListComponentsUseCaseDTO.Input) async throws -> [ListComponentsUseCaseDTO.Output]
+public protocol ListComponentUseCase {
+    func list(_ request: ListComponentsUseCaseDTO.Input) async throws
 }
