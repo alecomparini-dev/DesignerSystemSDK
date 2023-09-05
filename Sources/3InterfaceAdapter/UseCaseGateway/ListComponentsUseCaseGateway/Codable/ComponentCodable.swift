@@ -64,7 +64,7 @@ extension ComponentsCodable {
                     size: CGFloat($0.fontSize ?? 14) ,
                     color: $0.foregroundColor,
                     family: $0.fontName,
-                    weight: $0.style
+                    weight: (($0.style ?? 1) - 1)
                 )
             )
         }
