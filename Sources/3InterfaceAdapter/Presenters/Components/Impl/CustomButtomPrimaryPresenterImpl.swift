@@ -5,15 +5,15 @@ import Foundation
 import CustomComponentsSDK
 import DSMUseCase
 
-public class CustomTextPresenterImpl: CustomTextPresenter {
+public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
     
     private let getComponentUseCase: GetComponentUseCase
     
-    private let customText: LabelBuilder
+    private let customButtom: ButtonBuilder
     
-    public init(getComponentUseCase: GetComponentUseCase, customText: LabelBuilder) {
+    public init(getComponentUseCase: GetComponentUseCase, customButtom: ButtonBuilder) {
         self.getComponentUseCase = getComponentUseCase
-        self.customText = customText
+        self.customButtom = customButtom
     }
     
     
@@ -36,15 +36,18 @@ public class CustomTextPresenterImpl: CustomTextPresenter {
     
     
 //  MARK: - PRIVATE AREA
+    
     private func configComponent(_ dto: GetComponentUseCaseDTO.Output?) {
+        
         guard let dto else { return }
-        self.customText
-            .setSize(dto.font?.size)
-            .setColor(hexColor: dto.font?.color)
-            .setColor(named: dto.font?.color)
+        
+        customButtom
+            .setTitleSize(dto.font?.size)
+            .setTitleColor(hexColor: dto.font?.color)
+            .setTitleColor(named: dto.font?.color)
             .setBackgroundColor(named: dto.backgroundColor)
             .setBackgroundColor(hexColor: dto.backgroundColor)
-            .setWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
+            .setTitleWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
             .setFontFamily(dto.font?.family, dto.font?.size)
     }
     

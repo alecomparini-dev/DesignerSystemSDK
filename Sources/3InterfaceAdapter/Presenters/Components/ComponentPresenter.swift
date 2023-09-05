@@ -3,7 +3,7 @@
 
 import Foundation
 
-public protocol CustomTextPresenter {
+public protocol ComponentPresenter {
     func get(id: Int)
     func get(name: String)
     func get(uuid: String)

@@ -12,7 +12,7 @@ import DSMUseCase
 open class CustomText: LabelBuilder {
     private static let identifier = "customText"
     
-    private let cacheManager = CacheManager.shared
+    private let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: CacheManager.shared)
 
     
 //  MARK: - INITIALIZERS
@@ -25,8 +25,8 @@ open class CustomText: LabelBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let useCase: GetComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
-        let presenter = CustomTextPresenterImpl(getComponentUseCase: useCase, customText: self)
+        let presenter = CustomTextPresenterImpl(getComponentUseCase: getComponentUseCase, customText: self)
+        
         presenter.get(name: CustomText.identifier)
     }
         
