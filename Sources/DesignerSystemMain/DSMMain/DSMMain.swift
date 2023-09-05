@@ -12,7 +12,7 @@ public class DSMMain {
     
     private let url: URL
     
-    init(url: URL) {
+    public init(url: URL) {
         self.url = url
     }
     
