@@ -64,7 +64,7 @@ extension ComponentsCodable {
                     size: $0.fontSize  ,
                     color: $0.foregroundColor,
                     family: $0.fontName,
-                    weight: (($0.style ?? 1) - 1)
+                    weight: $0.style
                 )
             )
         }
