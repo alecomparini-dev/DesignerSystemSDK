@@ -49,11 +49,15 @@ public class CustomButtomPresenterImpl: ComponentPresenter {
             .setBackgroundColor(hexColor: dto.backgroundColor)
             .setTitleWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
             .setFontFamily(dto.font?.family, dto.font?.size)
-        
+            
             .setBorder { build in
                 build
                     .setCornerRadius(12)
             }
+        
+        if dto.font?.italic ?? false {
+            customButtom.setItalicFont()
+        }
     }
     
 }

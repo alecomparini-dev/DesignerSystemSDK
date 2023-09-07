@@ -14,7 +14,8 @@ struct MapperComponentToDTO {
                 family: comp.font?.family,
                 color: comp.font?.color,
                 size: comp.font?.size,
-                weight: comp.font?.weight
+                weight: comp.font?.weight,
+                italic: comp.font?.italic
             )
         )
         

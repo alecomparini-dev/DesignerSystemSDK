@@ -15,7 +15,7 @@ public enum GetComponentUseCaseDTO {
         public var color: String?
         public var size: CGFloat?
         public var weight: FontWeight?
-        public var aligment: FontAlignment?
+        public var italic: Bool?
     }
     
 }
