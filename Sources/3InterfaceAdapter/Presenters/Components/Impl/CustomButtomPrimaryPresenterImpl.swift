@@ -54,6 +54,10 @@ public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
                 build
                     .setCornerRadius(12)
             }
+        
+        if dto.font?.italic ?? false {
+            customButtom.setItalicFont()
+        }
     }
     
 }
