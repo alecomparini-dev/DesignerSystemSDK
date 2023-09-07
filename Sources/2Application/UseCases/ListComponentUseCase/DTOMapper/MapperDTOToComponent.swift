@@ -34,22 +34,16 @@ struct MapperDTOToComponent {
         switch weight {
             case 0:
                 return .bold
-            
             case 1:
                 return .regular
-                
             case 2:
                 return .black
-                
             case 3:
                 return .regular
-                
             case 4:
                 return .thin
-            
             case 5:
                 return .medium
-            
             default:
                 return .regular
         }
