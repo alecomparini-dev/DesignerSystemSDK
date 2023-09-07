@@ -23,6 +23,7 @@ public class ListComponentsUseCaseImpl: ListComponentUseCase {
         
         let components: [Component] = MapperDTOToComponent.mapper(componentsDTO)
         
+        cacheManager.clear()
         cacheManager.save(components)
         
     }
