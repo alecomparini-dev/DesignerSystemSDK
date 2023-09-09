@@ -7,17 +7,7 @@ import DSMUseCaseGateway
 final public class ComponentMemoryCache {
     public static let shared = ComponentMemoryCache()
     
-    private var cache: [ComponentMemoryCacheDTO] = [
-        ComponentMemoryCacheDTO.init(id: 1,
-                                       name: "customText",
-                                       backgroundColor: "transparent",
-                                       font: FontComponentMemoryCacheDTO(
-                                        size: 50,
-                                        color: "#00ff55",
-                                        weight: .black,
-                                        italic: false)
-                                      )
-    ]
+    private var cache: [ComponentMemoryCacheDTO] = []
     
     private init() {}
     
