@@ -104,7 +104,7 @@ let package = Package(
        .target(
             name: "DSMComponent",
             dependencies: [
-                "DSMPresenters",
+                "DSMPresenters", "MemoryCache",
                 .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/Main/Components"
