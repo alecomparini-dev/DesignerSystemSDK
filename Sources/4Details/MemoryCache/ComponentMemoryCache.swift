@@ -10,7 +10,6 @@ final public class ComponentMemoryCache {
     private var cache: [ComponentMemoryCacheDTO] = [
         ComponentMemoryCacheDTO.init(id: 1,
                                        name: "customText",
-                                       themeId: 1,
                                        backgroundColor: "transparent",
                                        font: FontComponentMemoryCacheDTO(
                                         size: 50,
@@ -48,6 +47,7 @@ extension ComponentMemoryCache: FindMemoryCache {
 extension ComponentMemoryCache: SaveMemoryCache {
     
     public func save<T>(contentsOf: [T]) {
+        deleteAll()
         cache.append(contentsOf: contentsOf as! [ComponentMemoryCacheDTO])
     }
     

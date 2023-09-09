@@ -24,5 +24,4 @@ public class GetComponentUseCaseImpl: GetComponentUseCase {
     }
     
     
-    
 }

@@ -13,6 +13,8 @@ struct ComponentMemoryCacheDTOMapper {
     static func mapper(_ dto: ComponentMemoryCacheDTO ) -> ComponentDTO {
         
         let dto = ComponentDTO (
+            id: dto.id,
+            name: dto.name,
             backgroundColor: dto.backgroundColor,
             font: FontDTO(
                 family: dto.font?.family,

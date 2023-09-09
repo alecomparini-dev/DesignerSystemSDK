@@ -10,9 +10,9 @@ public struct FontComponentMemoryCacheDTO {
     public let color: String
     public let family: String?
     public let weight: FontWeight?
-    public let italic: Bool
+    public let italic: Bool?
     
-    public init(size: CGFloat, color: String, family: String? = nil, weight: FontWeight? = nil, italic: Bool) {
+    public init(size: CGFloat, color: String, family: String? = nil, weight: FontWeight? = nil, italic: Bool? = nil) {
         self.size = size
         self.color = color
         self.family = family

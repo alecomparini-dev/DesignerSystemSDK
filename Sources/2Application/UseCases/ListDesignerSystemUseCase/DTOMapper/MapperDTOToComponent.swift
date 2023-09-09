@@ -8,21 +8,16 @@ import SharedEnums
 
 struct MapperDTOToComponent {
     
-    static func mapper(_ dto: [ListDesignerSystemUseCaseGatewayDTO.Output]) -> [Component] {
+    static func mapper(_ dto: [ListDesignerSystemUseCaseGatewayDTO.Output]) -> [ComponentDTO] {
         let component = dto.map {
-            Component(uuid: $0.uuid,
-                      id: $0.id,
-                      themeId: $0.themeId,
-                      name: $0.name,
-                      active: $0.active,
-                      backgroundColor: $0.backgroundColor ?? "transparent",
-                      font: FontComponent(
-                        size: $0.font?.size ?? 14,
-                        color: $0.font?.color ?? "#000000",
-                        family: $0.font?.family,
-                        weight: fontWeightAdapter($0.font?.weight) ,
-                        italic: $0.font?.weight == 1
-                      )
+            ComponentDTO(id: $0.id,
+                         name: $0.name,
+                         backgroundColor: $0.backgroundColor ?? "transparent",
+                         font: FontDTO( family: $0.font?.family,
+                                        color: $0.font?.color ?? "#000000",
+                                        size: $0.font?.size ?? 14,
+                                        weight: fontWeightAdapter($0.font?.weight) ,
+                                        italic: $0.font?.weight == 1 )
             )
             
         }

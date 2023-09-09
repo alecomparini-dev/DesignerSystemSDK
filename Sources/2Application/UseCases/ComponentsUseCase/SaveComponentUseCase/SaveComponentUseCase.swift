@@ -4,5 +4,5 @@
 import Foundation
 
 public protocol SaveComponentUseCase {
-    func save(components: [String])
+    func save(components: [ComponentDTO])
 }

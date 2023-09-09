@@ -9,6 +9,7 @@ import DSMDomain
 import DSMUseCase
 import DSMUseCaseGateway
 import Network
+import MemoryCache
 
 public class DSMMain {
     
@@ -31,7 +32,14 @@ public class DSMMain {
                                                                                  headers: self.headers,
                                                                                  queryParameters: self.queryParameters)
         
-        let listDSUseCase = ListDesignerSystemUseCaseImpl(listComponentGateway: listDSUseCaseGateway, cacheManager: CacheManagerDomain.shared)
+        
+        let saveMemoryCache = ComponentMemoryCache.shared
+        
+        let saveComponentGateway = MemorySaveComponentUseCaseGatewayImpl(memoryCache: saveMemoryCache)
+        
+        let saveComponent = SaveComponentUseCaseImpl(saveComponentUseCaseGateway: saveComponentGateway)
+        
+        let listDSUseCase = ListDesignerSystemUseCaseImpl(listComponentGateway: listDSUseCaseGateway, saveComponentUseCase: saveComponent)
         
         let dsmAdapter = StartDSMAdapterImpl(listDSUseCase: listDSUseCase)
         
