@@ -13,21 +13,15 @@ public class GetComponentUseCaseImpl: GetComponentUseCase {
         self.getComponentUseCaseGateway = getComponentUseCaseGateway
     }
     
-    public func get(id: Int) -> GetComponentUseCaseDTO.Output? {
-        if let component: GetComponentUseCaseGatewayDTO.Output = getComponentUseCaseGateway.get(id: id) {
-            return MapperUseCaseGatewayToUseCaseDTO.mapper(component)
-        }
-        return nil
+    public func get(id: Int) -> ComponentDTO? {
+        let component: ComponentDTO? = getComponentUseCaseGateway.get(id: id)
+        return component
     }
     
-    public func get(name: String) -> GetComponentUseCaseDTO.Output? {
-        
-        if let component: GetComponentUseCaseGatewayDTO.Output = getComponentUseCaseGateway.get(name: name) {
-            return MapperUseCaseGatewayToUseCaseDTO.mapper(component)
-        }
-        return nil
+    public func get(name: String) -> ComponentDTO? {
+        let component: ComponentDTO? = getComponentUseCaseGateway.get(name: name)
+        return component
     }
-    
     
     
 }

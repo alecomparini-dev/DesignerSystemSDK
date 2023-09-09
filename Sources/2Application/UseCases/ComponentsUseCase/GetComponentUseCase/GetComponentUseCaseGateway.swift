@@ -8,9 +8,7 @@
 import Foundation
 
 public protocol GetComponentUseCaseGateway: AnyObject {
-    
-    func get(id: Int) -> GetComponentUseCaseGatewayDTO.Output?
-    
-    func get(name: String) -> GetComponentUseCaseGatewayDTO.Output?
+    func get(id: Int) -> ComponentDTO?
+    func get(name: String) -> ComponentDTO?
     
 }

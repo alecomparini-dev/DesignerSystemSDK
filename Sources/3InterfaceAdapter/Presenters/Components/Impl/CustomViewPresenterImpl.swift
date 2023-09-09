@@ -20,19 +20,19 @@ public class CustomViewPresenterImpl: ComponentPresenter {
 //  MARK: - PUBLIC AREA
     
     public func get(id: Int) {
-        let dto: GetComponentUseCaseDTO.Output? = getComponentUseCase.get(id: id)
+        let dto: ComponentDTO? = getComponentUseCase.get(id: id)
         configComponent(dto)
     }
     
     public func get(name: String) {
-        let dto: GetComponentUseCaseDTO.Output? = getComponentUseCase.get(name: name)
+        let dto: ComponentDTO? = getComponentUseCase.get(name: name)
         configComponent(dto)
     }
     
     
     
 //  MARK: - PRIVATE AREA
-    private func configComponent(_ dto: GetComponentUseCaseDTO.Output?) {
+    private func configComponent(_ dto: ComponentDTO?) {
         guard let dto else { return }
         self.customView
             .setBackgroundColor(named: dto.backgroundColor)
