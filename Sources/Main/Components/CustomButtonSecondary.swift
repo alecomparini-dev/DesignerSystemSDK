@@ -4,9 +4,9 @@
 import UIKit
 
 import CustomComponentsSDK
-import DSMDomain
 import DSMPresenters
 import DSMUseCase
+import DSMUseCaseGateway
 
 
 open class CustomButtonSecondary: ButtonBuilder {
@@ -23,8 +23,8 @@ open class CustomButtonSecondary: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let cacheManager = CacheManagerDomain.shared
-        let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
+        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl()
+        let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
         let presenter = CustomButtomSecondaryPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
         presenter.get(name: CustomButtonSecondary.identifier)
     }

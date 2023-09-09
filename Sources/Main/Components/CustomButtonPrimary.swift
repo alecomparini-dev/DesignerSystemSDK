@@ -4,14 +4,13 @@
 import UIKit
 
 import CustomComponentsSDK
-import DSMDomain
 import DSMPresenters
 import DSMUseCase
+import DSMUseCaseGateway
 
 
 open class CustomButtonPrimary: ButtonBuilder {
     private static let identifier = "customButtonPrimary"
-    
     
 
     
@@ -25,8 +24,8 @@ open class CustomButtonPrimary: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let cacheManager = CacheManagerDomain.shared
-        let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
+        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl()
+        let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
         let presenter = CustomButtomPrimaryPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
         presenter.get(name: CustomButtonPrimary.identifier)
     }
