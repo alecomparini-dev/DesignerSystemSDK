@@ -2,32 +2,52 @@
 //
 
 import Foundation
+import DSMUseCaseGateway
 
-final public class CacheManager<T> {
-    public static let shared = CacheManager()
+final public class ComponentMemoryCache {
+    public static let shared = ComponentMemoryCache()
     
-    private var cache: [T] = []
+    public typealias T = ComponentMemoryCacheModel
+    
+    private var cache: [ComponentMemoryCacheModel] = [
+        ComponentMemoryCacheModel.init(id: 1,
+                                       name: "customText",
+                                       themeId: 1,
+                                       backgroundColor: "#00ff55",
+                                       font: FontComponentMemoryCacheModel(
+                                        size: 50,
+                                        color: "#00ff55",
+                                        weight: .black,
+                                        italic: false)
+                                      )
+    ]
     
     private init() {}
     
-    public func save(_ components: [T]) {
-        cache.append(contentsOf: components)
-    }
     
-    public func get() -> [T] {
-        return cache
+    public func save(_ components: [ComponentMemoryCacheModel]) {
+        cache.append(contentsOf: components)
     }
     
     public func clear() {
         cache.removeAll()
     }
     
-    public func getBy(id: Int) -> T? {
-        return cache.first { $0.id == id }
+}
+
+
+//  MARK: - EXTENSION - FindMemoryCache
+extension ComponentMemoryCache: FindMemoryCache {
+    public func findAll<T>() -> [T] {
+        return cache as! [T]
     }
     
-    public func getBy(name: String) -> T? {
-        return cache.first { $0.name == name }
+    public func findBy<T>(name: String) -> T? {
+        return cache.first { $0.name == name } as? T
+    }
+    
+    public func findBy<T>(id: Int) -> T? {
+        return cache.first { $0.id == id } as? T
     }
     
 }

@@ -7,7 +7,7 @@ import CustomComponentsSDK
 import DSMPresenters
 import DSMUseCase
 import DSMUseCaseGateway
-
+import MemoryCache
 
 open class CustomButtonSecondary: ButtonBuilder {
     private static let identifier = "customButtonSecundary"
@@ -23,9 +23,15 @@ open class CustomButtonSecondary: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl()
+        
+        let memoryCache = ComponentMemoryCache.shared
+        
+        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl(memoryCache: memoryCache)
+        
         let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
+        
         let presenter = CustomButtomSecondaryPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
+        
         presenter.get(name: CustomButtonSecondary.identifier)
     }
         

@@ -7,6 +7,7 @@ import CustomComponentsSDK
 import DSMPresenters
 import DSMUseCase
 import DSMUseCaseGateway
+import MemoryCache
 
 
 open class CustomButtonPrimary: ButtonBuilder {
@@ -24,11 +25,19 @@ open class CustomButtonPrimary: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl()
+        
+        let memoryCache = ComponentMemoryCache.shared
+        
+        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl(memoryCache: memoryCache)
+        
         let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
+        
         let presenter = CustomButtomPrimaryPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
+        
         presenter.get(name: CustomButtonPrimary.identifier)
+        
     }
+    
         
 }
 
