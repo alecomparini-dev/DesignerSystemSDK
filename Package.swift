@@ -81,6 +81,15 @@ let package = Package(
             ],
             path: "Sources/4Details/Network"
         ),
+        
+        
+        .target(
+            name: "MemoryCache",
+            dependencies: [
+                "DSMUseCaseGateway",
+            ],
+            path: "Sources/4Details/MemoryCache"
+        ),
 
         
         //  MARK: - MAIN LAYER

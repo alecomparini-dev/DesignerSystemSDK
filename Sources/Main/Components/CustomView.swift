@@ -7,6 +7,7 @@ import CustomComponentsSDK
 import DSMPresenters
 import DSMUseCase
 import DSMUseCaseGateway
+import MemoryCache
 
 
 open class CustomView: ViewBuilder {
@@ -23,9 +24,15 @@ open class CustomView: ViewBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl()
+        
+        let memoryCache = ComponentMemoryCache.shared
+        
+        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl(memoryCache: memoryCache)
+        
         let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
+        
         let presenter = CustomViewPresenterImpl(getComponentUseCase: getComponentUseCase, customView: self)
+        
         presenter.get(name: CustomView.identifier)
     }
         

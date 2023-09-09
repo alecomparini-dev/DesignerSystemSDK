@@ -7,6 +7,7 @@ import CustomComponentsSDK
 import DSMPresenters
 import DSMUseCase
 import DSMUseCaseGateway
+import MemoryCache
 
 
 open class CustomText: LabelBuilder {
@@ -23,9 +24,14 @@ open class CustomText: LabelBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl()
+        let memoryCache = ComponentMemoryCache.shared
+        
+        let getComponentUseCaseGateway = MemoryGetComponentUseCaseGatewayImpl(memoryCache: memoryCache)
+        
         let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
+        
         let presenter = CustomTextPresenterImpl(getComponentUseCase: getComponentUseCase, customText: self)
+        
         presenter.get(name: CustomText.identifier)
     }
         
