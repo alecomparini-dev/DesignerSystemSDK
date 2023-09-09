@@ -19,7 +19,7 @@ public class ListDesignerSystemUseCaseImpl: ListDesignerSystemUseCase {
     
     public func list() async throws {
         
-        let componentsDTO: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents()
+        let componentsDTO: [ListDesignerSystemUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents()
         
         let components: [Component] = MapperDTOToComponent.mapper(componentsDTO)
         

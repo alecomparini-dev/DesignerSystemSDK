@@ -4,7 +4,7 @@
 import Foundation
 import DSMDomain
 
-public enum ListComponentsUseCaseDTO {
+public enum ListDesignerSystemUseCaseDTO {
     
     public struct Output {
         public let name: String?

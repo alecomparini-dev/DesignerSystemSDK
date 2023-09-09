@@ -21,7 +21,7 @@ public class RemoteListDesignerSystemUseCaseGatewayImpl: ListDesignerSystemUseCa
         self.queryParameters = queryParameters
     }
     
-    public func listComponents() async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
+    public func listComponents() async throws -> [ListDesignerSystemUseCaseGatewayDTO.Output] {
      
         let data = try await httpGetClient.get(url: url, headers: headers, queryParameters: queryParameters)
         guard let data else { return [] }

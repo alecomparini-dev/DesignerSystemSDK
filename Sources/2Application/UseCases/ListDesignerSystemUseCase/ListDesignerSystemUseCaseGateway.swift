@@ -5,5 +5,5 @@ import Foundation
 
 
 public protocol ListDesignerSystemUseCaseGateway {
-    func listComponents() async throws -> [ListComponentsUseCaseGatewayDTO.Output]
+    func listComponents() async throws -> [ListDesignerSystemUseCaseGatewayDTO.Output]
 }
