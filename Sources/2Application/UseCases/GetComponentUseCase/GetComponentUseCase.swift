@@ -10,5 +10,4 @@ import Foundation
 public protocol GetComponentUseCase {
     func get(id: Int) -> GetComponentUseCaseDTO.Output?
     func get(name: String) -> GetComponentUseCaseDTO.Output?
-    func get(uuid: String) -> GetComponentUseCaseDTO.Output?
 }

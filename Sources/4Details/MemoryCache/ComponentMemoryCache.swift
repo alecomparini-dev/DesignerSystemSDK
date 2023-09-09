@@ -22,10 +22,6 @@ final public class CacheManager<T> {
         cache.removeAll()
     }
     
-    public func getBy(uuid: String) -> T? {
-        return cache.first { $0.uuid == uuid }
-    }
-    
     public func getBy(id: Int) -> T? {
         return cache.first { $0.id == id }
     }
