@@ -6,5 +6,4 @@ import Foundation
 public protocol ComponentPresenter {
     func get(id: Int)
     func get(name: String)
-    func get(uuid: String)
 }

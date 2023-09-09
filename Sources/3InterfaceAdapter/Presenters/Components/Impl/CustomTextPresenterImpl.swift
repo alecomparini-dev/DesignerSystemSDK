@@ -29,11 +29,6 @@ public class CustomTextPresenterImpl: ComponentPresenter {
         configComponent(dto)
     }
     
-    public func get(uuid: String) {
-        let dto: GetComponentUseCaseDTO.Output? = getComponentUseCase.get(uuid: uuid)
-        configComponent(dto)
-    }
-    
     
 //  MARK: - PRIVATE AREA
     private func configComponent(_ dto: GetComponentUseCaseDTO.Output?) {

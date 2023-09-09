@@ -6,7 +6,8 @@ import Foundation
 import DSMUseCase
 
 
-public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGateway {
+public class RemoteListDesignerSystemUseCaseGatewayImpl: ListDesignerSystemUseCaseGateway {
+
     
     private let httpGetClient: HTTPGet
     private let url: URL
@@ -20,7 +21,7 @@ public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGatewa
         self.queryParameters = queryParameters
     }
     
-    public func listComponents() async throws -> [ListComponentsUseCaseGatewayDTO.Output] {
+    public func listComponents() async throws -> [ListDesignerSystemUseCaseGatewayDTO.Output] {
      
         let data = try await httpGetClient.get(url: url, headers: headers, queryParameters: queryParameters)
         guard let data else { return [] }

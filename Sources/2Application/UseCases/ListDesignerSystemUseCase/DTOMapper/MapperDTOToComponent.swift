@@ -8,7 +8,7 @@ import SharedEnums
 
 struct MapperDTOToComponent {
     
-    static func mapper(_ dto: [ListComponentsUseCaseGatewayDTO.Output]) -> [Component] {
+    static func mapper(_ dto: [ListDesignerSystemUseCaseGatewayDTO.Output]) -> [Component] {
         let component = dto.map {
             Component(uuid: $0.uuid,
                       id: $0.id,

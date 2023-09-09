@@ -7,30 +7,22 @@ import DSMDomain
 
 public class GetComponentUseCaseImpl: GetComponentUseCase {
 
-    private let cacheManager: CacheManager
     
-    public init(cacheManager: CacheManager) {
-        self.cacheManager = cacheManager
+    private let getComponentUseCaseGateway: GetComponentUseCaseGateway
+    
+    public init(getComponentUseCaseGateway: GetComponentUseCaseGateway) {
+        self.getComponentUseCaseGateway = getComponentUseCaseGateway
     }
     
+    
     public func get(id: Int) -> GetComponentUseCaseDTO.Output? {
-        let component: Component? = cacheManager.getBy(id: id)
-        guard let component else {return nil}
-        
-        let dto = MapperComponentToDTO.mapper(component)
-        return dto
+        let component: GetComponentUseCaseDTO.Output? = getComponentUseCaseGateway.get(id: id)
+        return component
     }
     
     public func get(name: String) -> GetComponentUseCaseDTO.Output? {
-        let component: Component? = cacheManager.getBy(name: name)
-        guard let component else {return nil}
-        
-        let dto = MapperComponentToDTO.mapper(component)
-        return dto
-    }
-    
-    public func get(uuid: String) -> GetComponentUseCaseDTO.Output? {
-        return GetComponentUseCaseDTO.Output()
+        let component: GetComponentUseCaseDTO.Output? = getComponentUseCaseGateway.get(name: name)
+        return component
     }
     
     

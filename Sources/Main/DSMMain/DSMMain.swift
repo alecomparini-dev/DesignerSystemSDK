@@ -26,14 +26,14 @@ public class DSMMain {
         
         let httpGetClient: HTTPGet = Network()
                 
-        let listComponentUseCaseGateway = RemoteListComponentsUseCaseGatewayImpl(httpGetClient: httpGetClient,
+        let listDSUseCaseGateway = RemoteListDesignerSystemUseCaseGatewayImpl(httpGetClient: httpGetClient,
                                                                                  url: self.url,
                                                                                  headers: self.headers,
                                                                                  queryParameters: self.queryParameters)
         
-        let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway, cacheManager: CacheManager.shared)
+        let listDSUseCase = ListDesignerSystemUseCaseImpl(listComponentGateway: listDSUseCaseGateway, cacheManager: CacheManagerDomain.shared)
         
-        let dsmAdapter = StartDSMAdapterImpl(listComponentsUseCase: listComponentsUseCase)
+        let dsmAdapter = StartDSMAdapterImpl(listDSUseCase: listDSUseCase)
         
         try await dsmAdapter.start()
         

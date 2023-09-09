@@ -3,7 +3,7 @@
 
 import Foundation
 
-public enum ListComponentsUseCaseGatewayDTO {
+public enum ListDesignerSystemUseCaseGatewayDTO {
     
     public struct Input {
         let themeId: Int
@@ -17,9 +17,9 @@ public enum ListComponentsUseCaseGatewayDTO {
         public let backgroundColor: String?
         public let create: String?
         public let active: Bool?
-        public let font: ListComponentsUseCaseGatewayDTO.Font?
+        public let font: ListDesignerSystemUseCaseGatewayDTO.Font?
         
-        public init(id: Int, name: String, uuid: String?, themeId: Int, backgroundColor: String?, create: String?, active: Bool?, font: ListComponentsUseCaseGatewayDTO.Font?) {
+        public init(id: Int, name: String, uuid: String?, themeId: Int, backgroundColor: String?, create: String?, active: Bool?, font: ListDesignerSystemUseCaseGatewayDTO.Font?) {
             self.id = id
             self.name = name
             self.uuid = uuid

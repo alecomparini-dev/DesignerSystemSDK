@@ -3,8 +3,8 @@
 
 import Foundation
 
-final public class CacheManager {
-    public static let shared = CacheManager()
+final public class CacheManagerDomain {
+    public static let shared = CacheManagerDomain()
     
     private var cache: [Component] = []
     

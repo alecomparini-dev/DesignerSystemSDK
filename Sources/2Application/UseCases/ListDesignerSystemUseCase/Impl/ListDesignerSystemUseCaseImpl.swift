@@ -7,19 +7,19 @@ import Foundation
 import DSMDomain
 import SharedEnums
 
-public class ListComponentsUseCaseImpl: ListComponentUseCase {
+public class ListDesignerSystemUseCaseImpl: ListDesignerSystemUseCase {
     
-    private let listComponentGateway: ListComponentsUseCaseGateway
-    private let cacheManager: CacheManager
+    private let listComponentGateway: ListDesignerSystemUseCaseGateway
+    private let cacheManager: CacheManagerDomain
     
-    public init(listComponentGateway: ListComponentsUseCaseGateway, cacheManager: CacheManager) {
+    public init(listComponentGateway: ListDesignerSystemUseCaseGateway, cacheManager: CacheManagerDomain) {
         self.listComponentGateway = listComponentGateway
         self.cacheManager = cacheManager
     }
     
     public func list() async throws {
         
-        let componentsDTO: [ListComponentsUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents()
+        let componentsDTO: [ListDesignerSystemUseCaseGatewayDTO.Output] = try await listComponentGateway.listComponents()
         
         let components: [Component] = MapperDTOToComponent.mapper(componentsDTO)
         

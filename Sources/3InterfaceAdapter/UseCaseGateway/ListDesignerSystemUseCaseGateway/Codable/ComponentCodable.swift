@@ -50,9 +50,9 @@ struct ComponentCodable: Codable {
 }
 
 extension ComponentsCodable {
-    func mapperToDTO() -> [ListComponentsUseCaseGatewayDTO.Output] {
+    func mapperToDTO() -> [ListDesignerSystemUseCaseGatewayDTO.Output] {
         return self.map {
-            ListComponentsUseCaseGatewayDTO.Output(
+            ListDesignerSystemUseCaseGatewayDTO.Output(
                 id: $0.id,
                 name: $0.name,
                 uuid: $0.uid,
@@ -60,7 +60,7 @@ extension ComponentsCodable {
                 backgroundColor: $0.backgroundColor,
                 create: $0.creationDate,
                 active: !($0.isInativo ?? true),
-                font: ListComponentsUseCaseGatewayDTO.Font (
+                font: ListDesignerSystemUseCaseGatewayDTO.Font (
                     size: $0.fontSize  ,
                     color: $0.foregroundColor,
                     family: $0.fontName,
