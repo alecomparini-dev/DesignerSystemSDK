@@ -7,14 +7,12 @@ import DSMUseCaseGateway
 final public class ComponentMemoryCache {
     public static let shared = ComponentMemoryCache()
     
-    public typealias T = ComponentMemoryCacheModel
-    
-    private var cache: [ComponentMemoryCacheModel] = [
-        ComponentMemoryCacheModel.init(id: 1,
+    private var cache: [ComponentMemoryCacheDTO] = [
+        ComponentMemoryCacheDTO.init(id: 1,
                                        name: "customText",
                                        themeId: 1,
                                        backgroundColor: "transparent",
-                                       font: FontComponentMemoryCacheModel(
+                                       font: FontComponentMemoryCacheDTO(
                                         size: 50,
                                         color: "#00ff55",
                                         weight: .black,
@@ -24,19 +22,11 @@ final public class ComponentMemoryCache {
     
     private init() {}
     
-    
-    public func save(_ components: [ComponentMemoryCacheModel]) {
-        cache.append(contentsOf: components)
-    }
-    
-    public func clear() {
-        cache.removeAll()
-    }
-    
 }
 
 
 //  MARK: - EXTENSION - FindMemoryCache
+
 extension ComponentMemoryCache: FindMemoryCache {
     public func findAll<T>() -> [T] {
         return cache as! [T]
@@ -48,6 +38,37 @@ extension ComponentMemoryCache: FindMemoryCache {
     
     public func findBy<T>(id: Int) -> T? {
         return cache.first { $0.id == id } as? T
+    }
+    
+}
+
+
+//  MARK: - EXTENSION - SaveMemoryCache
+
+extension ComponentMemoryCache: SaveMemoryCache {
+    
+    public func save<T>(contentsOf: [T]) {
+        cache.append(contentsOf: contentsOf as! [ComponentMemoryCacheDTO])
+    }
+    
+    public func save<T>(item: T) {
+        cache.append(item as! ComponentMemoryCacheDTO)
+    }
+    
+}
+
+
+//  MARK: - EXTENSION - DeleteMemoyCache
+
+extension ComponentMemoryCache: DeleteMemoyCache {
+    public func deleteAll() {
+        cache.removeAll()
+    }
+    
+    public func deleteBy(id: Int) {
+        if let id = cache.firstIndex(where: { $0.id == id }) {
+            cache.remove(at: id)
+        }
     }
     
 }

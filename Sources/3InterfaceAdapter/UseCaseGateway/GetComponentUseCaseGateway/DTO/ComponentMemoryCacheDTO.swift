@@ -7,14 +7,14 @@
 
 import Foundation
 
-public struct ComponentMemoryCacheModel {
+public struct ComponentMemoryCacheDTO {
     public let id: Int
     public let name: String
     public let themeId: Int
     public let backgroundColor: String
-    public let font: FontComponentMemoryCacheModel?
+    public let font: FontComponentMemoryCacheDTO?
     
-    public init(id: Int, name: String, themeId: Int, backgroundColor: String, font: FontComponentMemoryCacheModel?) {
+    public init(id: Int, name: String, themeId: Int, backgroundColor: String, font: FontComponentMemoryCacheDTO?) {
         self.id = id
         self.name = name
         self.themeId = themeId

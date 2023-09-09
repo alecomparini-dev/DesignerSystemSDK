@@ -18,18 +18,24 @@ public class MemoryGetComponentUseCaseGatewayImpl: GetComponentUseCaseGateway {
     }
 
 
-    public func get(id: Int) -> GetComponentUseCaseGatewayDTO.Output? {
-        if let model: ComponentMemoryCacheModel = memoryCache.findBy(id: id) {
-            return ComponentMemoryCacheModelMapper.mapperToDTO(model: model)
+    public func get(id: Int) -> ComponentDTO? {
+        
+        if let componentMemoryCacheDTO: ComponentMemoryCacheDTO = memoryCache.findBy(id: id) {
+            
+            return ComponentMemoryCacheDTOMapper.mapper(componentMemoryCacheDTO)
+            
         }
+        
         return nil
     }
     
     
-    public func get(name: String) -> GetComponentUseCaseGatewayDTO.Output? {
-        if let model: ComponentMemoryCacheModel = memoryCache.findBy(name: name) {
-            return ComponentMemoryCacheModelMapper.mapperToDTO(model: model)
+    public func get(name: String) -> ComponentDTO? {
+        if let componentMemoryCacheDTO: ComponentMemoryCacheDTO = memoryCache.findBy(name: name) {
+            
+            return ComponentMemoryCacheDTOMapper.mapper(componentMemoryCacheDTO)
         }
+        
         return nil
     }
     

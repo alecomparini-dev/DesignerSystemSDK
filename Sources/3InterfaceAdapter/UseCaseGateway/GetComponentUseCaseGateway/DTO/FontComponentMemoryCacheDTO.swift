@@ -5,7 +5,7 @@ import Foundation
 
 import SharedEnums
 
-public struct FontComponentMemoryCacheModel {
+public struct FontComponentMemoryCacheDTO {
     public let size: CGFloat
     public let color: String
     public let family: String?
