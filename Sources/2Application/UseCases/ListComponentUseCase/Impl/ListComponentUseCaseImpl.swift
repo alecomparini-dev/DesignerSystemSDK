@@ -10,9 +10,9 @@ import SharedEnums
 public class ListComponentsUseCaseImpl: ListComponentUseCase {
     
     private let listComponentGateway: ListComponentsUseCaseGateway
-    private let cacheManager: CacheManager
+    private let cacheManager: CacheManagerDomain
     
-    public init(listComponentGateway: ListComponentsUseCaseGateway, cacheManager: CacheManager) {
+    public init(listComponentGateway: ListComponentsUseCaseGateway, cacheManager: CacheManagerDomain) {
         self.listComponentGateway = listComponentGateway
         self.cacheManager = cacheManager
     }

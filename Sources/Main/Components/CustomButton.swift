@@ -23,7 +23,7 @@ open class CustomButton: ButtonBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let cacheManager = CacheManager.shared
+        let cacheManager = CacheManagerDomain.shared
         let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
         let presenter = CustomButtomPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
         presenter.get(name: CustomButton.identifier)

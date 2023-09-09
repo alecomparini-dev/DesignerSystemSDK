@@ -23,7 +23,7 @@ open class CustomText: LabelBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let cacheManager = CacheManager.shared
+        let cacheManager = CacheManagerDomain.shared
         let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
         let presenter = CustomTextPresenterImpl(getComponentUseCase: getComponentUseCase, customText: self)
         presenter.get(name: CustomText.identifier)

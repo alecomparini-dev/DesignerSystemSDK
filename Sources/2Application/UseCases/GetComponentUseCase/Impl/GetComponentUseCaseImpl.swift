@@ -7,9 +7,9 @@ import DSMDomain
 
 public class GetComponentUseCaseImpl: GetComponentUseCase {
 
-    private let cacheManager: CacheManager
+    private let cacheManager: CacheManagerDomain
     
-    public init(cacheManager: CacheManager) {
+    public init(cacheManager: CacheManagerDomain) {
         self.cacheManager = cacheManager
     }
     

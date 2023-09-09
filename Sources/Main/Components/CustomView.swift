@@ -23,7 +23,7 @@ open class CustomView: ViewBuilder {
     
 //  MARK: - PRIVATE AREA
     private func configure() {
-        let cacheManager = CacheManager.shared
+        let cacheManager = CacheManagerDomain.shared
         let getComponentUseCase = GetComponentUseCaseImpl(cacheManager: cacheManager)
         let presenter = CustomViewPresenterImpl(getComponentUseCase: getComponentUseCase, customView: self)
         presenter.get(name: CustomView.identifier)

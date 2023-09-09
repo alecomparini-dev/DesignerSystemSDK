@@ -31,7 +31,7 @@ public class DSMMain {
                                                                                  headers: self.headers,
                                                                                  queryParameters: self.queryParameters)
         
-        let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway, cacheManager: CacheManager.shared)
+        let listComponentsUseCase = ListComponentsUseCaseImpl(listComponentGateway: listComponentUseCaseGateway, cacheManager: CacheManagerDomain.shared)
         
         let dsmAdapter = StartDSMAdapterImpl(listComponentsUseCase: listComponentsUseCase)
         
