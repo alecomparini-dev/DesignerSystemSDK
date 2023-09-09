@@ -4,6 +4,6 @@
 
 import Foundation
 
-public protocol ListComponentUseCase {
+public protocol ListDesignerSystemUseCase {
     func list() async throws
 }

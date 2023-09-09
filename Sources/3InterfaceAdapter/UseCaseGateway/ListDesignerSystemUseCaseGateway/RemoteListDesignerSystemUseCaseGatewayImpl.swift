@@ -6,7 +6,8 @@ import Foundation
 import DSMUseCase
 
 
-public class RemoteListComponentsUseCaseGatewayImpl: ListComponentsUseCaseGateway {
+public class RemoteListDesignerSystemUseCaseGatewayImpl: ListDesignerSystemUseCaseGateway {
+
     
     private let httpGetClient: HTTPGet
     private let url: URL

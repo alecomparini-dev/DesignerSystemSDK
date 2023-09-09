@@ -7,12 +7,12 @@ import Foundation
 import DSMDomain
 import SharedEnums
 
-public class ListComponentsUseCaseImpl: ListComponentUseCase {
+public class ListDesignerSystemUseCaseImpl: ListDesignerSystemUseCase {
     
-    private let listComponentGateway: ListComponentsUseCaseGateway
+    private let listComponentGateway: ListDesignerSystemUseCaseGateway
     private let cacheManager: CacheManagerDomain
     
-    public init(listComponentGateway: ListComponentsUseCaseGateway, cacheManager: CacheManagerDomain) {
+    public init(listComponentGateway: ListDesignerSystemUseCaseGateway, cacheManager: CacheManagerDomain) {
         self.listComponentGateway = listComponentGateway
         self.cacheManager = cacheManager
     }

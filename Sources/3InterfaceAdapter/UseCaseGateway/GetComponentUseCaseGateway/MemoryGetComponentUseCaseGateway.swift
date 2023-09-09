@@ -10,9 +10,14 @@ import DSMUseCase
 
 
 public class MemoryGetComponentUseCaseGatewayImpl: GetComponentUseCaseGateway {
-    
     public init() {}
     
+
+    
+    public func getAll() -> [DSMUseCase.GetComponentUseCaseDTO.Output] {
+        return []
+    }
+
     public func get(id: Int) -> DSMUseCase.GetComponentUseCaseDTO.Output? {
         
         return nil

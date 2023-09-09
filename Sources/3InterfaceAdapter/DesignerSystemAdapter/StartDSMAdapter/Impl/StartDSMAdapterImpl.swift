@@ -10,15 +10,15 @@ import DSMUseCase
 
 public class StartDSMAdapterImpl: StartDSMAdapter {
     
-    private let listComponentsUseCase: ListComponentUseCase
+    private let listDSUseCase: ListDesignerSystemUseCase
     
-    public init(listComponentsUseCase: ListComponentUseCase) {
-        self.listComponentsUseCase = listComponentsUseCase
+    public init(listDSUseCase: ListDesignerSystemUseCase) {
+        self.listDSUseCase = listDSUseCase
     }
     
     public func start() async throws {
         
-        try await listComponentsUseCase.list()
+        try await listDSUseCase.list()
         
     }
     
