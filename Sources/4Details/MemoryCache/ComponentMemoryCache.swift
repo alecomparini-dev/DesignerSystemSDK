@@ -13,7 +13,7 @@ final public class ComponentMemoryCache {
         ComponentMemoryCacheModel.init(id: 1,
                                        name: "customText",
                                        themeId: 1,
-                                       backgroundColor: "#00ff55",
+                                       backgroundColor: "transparent",
                                        font: FontComponentMemoryCacheModel(
                                         size: 50,
                                         color: "#00ff55",
