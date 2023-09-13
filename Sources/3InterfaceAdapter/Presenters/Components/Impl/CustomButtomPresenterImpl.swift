@@ -47,7 +47,7 @@ public class CustomButtomPresenterImpl: ComponentPresenter {
             
             .setBorder { build in
                 build
-                    .setCornerRadius(12)
+                    .setCornerRadius(16)
             }
         
         if dto.font?.italic ?? false {

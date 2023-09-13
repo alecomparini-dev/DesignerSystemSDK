@@ -46,7 +46,7 @@ public class CustomButtomPrimaryPresenterImpl: ComponentPresenter {
             .setFontFamily(dto.font?.family, dto.font?.size)
             .setBorder { build in
                 build
-                    .setCornerRadius(12)
+                    .setCornerRadius(16)
             }
         
         if dto.font?.italic ?? false {
