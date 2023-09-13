@@ -41,13 +41,13 @@ public class CustomButtomSecondaryPresenterImpl: ComponentPresenter {
             .setTitleSize(dto.font?.size)
             .setTitleColor(hexColor: dto.font?.color)
             .setTitleColor(named: dto.font?.color)
-            .setBackgroundColor(named: dto.backgroundColor)
-            .setBackgroundColor(hexColor: dto.backgroundColor)
             .setTitleWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
             .setFontFamily(dto.font?.family, dto.font?.size)
             .setBorder { build in
                 build
-                    .setCornerRadius(12)
+                    .setCornerRadius(8)
+                    .setWidth(1)
+                    .setColor(hexColor: dto.backgroundColor)
             }
         
         if dto.font?.italic ?? false {
