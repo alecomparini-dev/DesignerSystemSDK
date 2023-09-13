@@ -10,7 +10,7 @@ import DSMUseCaseGateway
 import MemoryCache
 
 open class CustomButtonSecondary: ButtonBuilder {
-    private static let identifier = "customButtonSecundary"
+    private static let identifier = "customButtonSecondary"
     
     
 //  MARK: - INITIALIZERS
