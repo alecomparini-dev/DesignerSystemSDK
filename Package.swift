@@ -18,7 +18,6 @@ let package = Package(
   
     dependencies: [
         .package(url: "https://github.com/alecomparini-dev/NetworkSDK.git", branch: "develop"),
-//        .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "feature/improvements")
         .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "develop")
     ],
     
