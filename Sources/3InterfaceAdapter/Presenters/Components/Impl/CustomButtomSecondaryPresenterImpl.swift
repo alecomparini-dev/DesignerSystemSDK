@@ -45,8 +45,8 @@ public class CustomButtomSecondaryPresenterImpl: ComponentPresenter {
             .setFontFamily(dto.font?.family, dto.font?.size)
             .setBorder { build in
                 build
-                    .setCornerRadius(8)
-                    .setWidth(1)
+                    .setCornerRadius(16)
+                    .setWidth(2)
                     .setColor(hexColor: dto.backgroundColor)
             }
         
