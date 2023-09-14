@@ -16,7 +16,8 @@ public class MemorySaveComponentUseCaseGatewayImpl: SaveComponentUseCaseGateway 
     
     public func save(components: [ComponentDTO]) {
         let compomentMemoryCacheDTO: [ComponentMemoryCacheDTO?] = components.map {
-            ComponentMemoryCacheDTO(id: $0.id,
+            ComponentMemoryCacheDTO(themeId: $0.themeId,
+                                    id: $0.id,
                                     name: $0.name,
                                     backgroundColor: $0.backgroundColor,
                                     font: FontComponentMemoryCacheDTO(size: $0.font?.size ?? 14,
