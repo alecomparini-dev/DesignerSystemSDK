@@ -15,6 +15,7 @@ struct ComponentMemoryCacheDTOMapper {
         let dto = ComponentDTO (
             id: dto.id,
             name: dto.name,
+            themeId: dto.themeId,
             backgroundColor: dto.backgroundColor,
             font: FontDTO(
                 family: dto.font?.family,

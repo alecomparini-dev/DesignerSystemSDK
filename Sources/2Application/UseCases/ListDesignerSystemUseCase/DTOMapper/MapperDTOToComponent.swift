@@ -12,6 +12,7 @@ struct MapperDTOToComponent {
         let component = dto.map {
             ComponentDTO(id: $0.id,
                          name: $0.name,
+                         themeId: $0.themeId,
                          backgroundColor: $0.backgroundColor ?? "transparent",
                          font: FontDTO( family: $0.font?.family,
                                         color: $0.font?.color ?? "#000000",

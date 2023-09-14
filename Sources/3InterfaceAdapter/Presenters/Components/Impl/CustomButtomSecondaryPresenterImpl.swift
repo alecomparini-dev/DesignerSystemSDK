@@ -46,10 +46,21 @@ public class CustomButtomSecondaryPresenterImpl: ComponentPresenter {
             .setBorder { build in
                 build
                     .setCornerRadius(16)
-                    .setWidth(2)
-                    .setColor(hexColor: dto.backgroundColor)
             }
-        
+
+        if dto.themeId == 3 {
+            customButtom
+                .setBorder { build in
+                    build
+                        .setWidth(2)
+                        .setColor(hexColor: dto.backgroundColor)
+                }
+        } else {
+            customButtom
+                .setBackgroundColor(named: dto.backgroundColor)
+                .setBackgroundColor(hexColor: dto.backgroundColor)
+        }
+
         if dto.font?.italic ?? false {
             customButtom.setItalicFont()
         }
