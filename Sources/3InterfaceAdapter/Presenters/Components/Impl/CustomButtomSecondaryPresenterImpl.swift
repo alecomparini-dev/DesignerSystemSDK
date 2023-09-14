@@ -25,7 +25,12 @@ public class CustomButtomSecondaryPresenterImpl: ComponentPresenter {
     }
     
     public func get(name: String) {
-        let dto: ComponentDTO? = getComponentUseCase.get(name: name)
+        var dto: ComponentDTO? = getComponentUseCase.get(name: name)
+        if let dto {
+            configComponent(dto)
+            return
+        }
+        dto = getComponentUseCase.get(name: "customButtonSecundary")
         configComponent(dto)
     }
     
