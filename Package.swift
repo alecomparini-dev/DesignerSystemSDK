@@ -77,7 +77,7 @@ let package = Package(
             name: "Network",
             dependencies: [
                 "DSMUseCaseGateway",
-                .product(name: "NetworkSDK" , package: "NetworkSDK")
+                .product(name: "NetworkSDKMain" , package: "NetworkSDK")
             ],
             path: "Sources/4Details/Network"
         ),
