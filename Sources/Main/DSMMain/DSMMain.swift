@@ -11,7 +11,7 @@ import DSMUseCaseGateway
 import Network
 import MemoryCache
 
-public class DSMMain {
+public class DesignerSystemMain {
     
     private let url: URL
     private let headers: [String : String]
