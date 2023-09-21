@@ -12,8 +12,8 @@ let package = Package(
     ],
     
     products: [
-        .library(name: "DesignerSystemSDKMain",  targets: ["DSMMain"]),
-        .library(name: "DesignerSystemSDKComponent",  targets: ["DSMComponent"])
+        .library(name: "DesignerSystemSDKMain",  targets: ["DesignerSystemSDKMain"]),
+        .library(name: "DesignerSystemSDKComponent",  targets: ["DesignerSystemSDKComponent"])
     ],
   
     dependencies: [
@@ -94,7 +94,7 @@ let package = Package(
         
         //  MARK: - MAIN LAYER
         .target(
-            name: "DSMMain",
+            name: "DesignerSystemSDKMain",
             dependencies: [
                 "DesignerSystemAdapter", "Network"
             ],
@@ -102,7 +102,7 @@ let package = Package(
         ),
 
        .target(
-            name: "DSMComponent",
+            name: "DesignerSystemSDKComponent",
             dependencies: [
                 "DSMPresenters", "MemoryCache",
                 .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
