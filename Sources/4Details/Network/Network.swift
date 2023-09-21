@@ -5,7 +5,7 @@ import Foundation
 
 import DSMUseCaseGateway
 import NetworkInterfaces
-import NetworkSDK
+import NetworkSDKMain
 
 public class Network: HTTPGet {
     
