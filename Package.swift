@@ -18,7 +18,7 @@ let package = Package(
   
     dependencies: [
         .package(url: "https://github.com/alecomparini-dev/NetworkSDK.git", branch: "develop"),
-        .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "develop")
+        .package(url: "https://github.com/alecomparini-dev/CustomComponentsSDK.git", branch: "feature/Shadow")
     ],
     
     
@@ -82,7 +82,6 @@ let package = Package(
             path: "Sources/4Details/Network"
         ),
         
-        
         .target(
             name: "MemoryCache",
             dependencies: [
@@ -96,7 +95,8 @@ let package = Package(
         .target(
             name: "DesignerSystemSDKMain",
             dependencies: [
-                "DesignerSystemAdapter", "Network"
+                "DesignerSystemAdapter", 
+                "Network"
             ],
             path: "Sources/Main/DSMMain"
         ),
@@ -104,7 +104,8 @@ let package = Package(
        .target(
             name: "DesignerSystemSDKComponent",
             dependencies: [
-                "DSMPresenters", "MemoryCache",
+                "DSMPresenters", 
+                "MemoryCache",
                 .product(name: "CustomComponentsSDK" , package: "CustomComponentsSDK")
             ],
             path: "Sources/Main/Components"
