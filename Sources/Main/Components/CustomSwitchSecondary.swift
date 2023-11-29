@@ -9,8 +9,8 @@ import DSMUseCase
 import DSMUseCaseGateway
 import MemoryCache
 
-open class CustomButtonSecondary: ButtonBuilder {
-    private static let identifier = "customButtonSecondary"
+open class CustomSwitchSecondary: SwitchBuilder {
+    private static let identifier = "customSwitchSecondary"
     
     
 //  MARK: - INITIALIZERS
@@ -18,6 +18,11 @@ open class CustomButtonSecondary: ButtonBuilder {
     public override init() {
         super.init()
         configure()
+    }
+    
+    public convenience init(isOn: Bool) {
+        self.init()
+        self.setIsOn(isOn)
     }
 
     
@@ -30,9 +35,9 @@ open class CustomButtonSecondary: ButtonBuilder {
         
         let getComponentUseCase = GetComponentUseCaseImpl(getComponentUseCaseGateway: getComponentUseCaseGateway)
         
-        let presenter = CustomButtomSecondaryPresenterImpl(getComponentUseCase: getComponentUseCase, customButtom: self)
+        let presenter = CustomSwitchSecondaryPresenterImpl(getComponentUseCase: getComponentUseCase, customSwitch: self)
         
-        presenter.get(name: CustomButtonSecondary.identifier)
+        presenter.get(name: CustomSwitchSecondary.identifier)
     }
         
 }
