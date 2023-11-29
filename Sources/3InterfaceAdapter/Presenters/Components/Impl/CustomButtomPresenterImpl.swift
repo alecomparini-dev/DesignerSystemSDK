@@ -40,6 +40,7 @@ public class CustomButtomPresenterImpl: ComponentPresenter {
             .setTitleSize(dto.font?.size)
             .setTitleColor(hexColor: dto.font?.color)
             .setTitleColor(named: dto.font?.color)
+            .setTintColor(hexColor: dto.font?.color)
             .setBackgroundColor(named: dto.backgroundColor)
             .setBackgroundColor(hexColor: dto.backgroundColor)
             .setTitleWeight(K.Weight(rawValue: dto.font?.weight?.rawValue ?? K.Default.weight.rawValue))
