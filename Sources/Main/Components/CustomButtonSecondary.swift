@@ -19,6 +19,11 @@ open class CustomButtonSecondary: ButtonImageBuilder {
         super.init()
         configure()
     }
+    
+    public override init(_ title: String) {
+        super.init(title)
+        configure()
+    }
 
     
 //  MARK: - PRIVATE AREA
