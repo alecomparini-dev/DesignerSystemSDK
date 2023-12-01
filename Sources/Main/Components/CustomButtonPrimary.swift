@@ -10,7 +10,7 @@ import DSMUseCaseGateway
 import MemoryCache
 
 
-open class CustomButtonPrimary: ButtonBuilder {
+open class CustomButtonPrimary: ButtonImageBuilder {
     private static let identifier = "customButtonPrimary"
     
 
